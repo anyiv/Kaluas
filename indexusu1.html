@@ -38,10 +38,22 @@
         ¡Bienvenido a Kaluas Café!
       </div>
     </ons-toolbar>
+    <ons-pull-hook id="pull-hook">
+      Pull to refresh
+    </ons-pull-hook>
     <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-      ¡Desliza a la derecha para abrir el menú!
+      Menú del día
+      <ons-list>
+        <ons-list-item><div class=""></div></ons-list-item>
+        <ons-list-item>Item 2</ons-list-item>
+        <ons-list-item>Item 3</ons-list-item>
+        <ons-list-item>Item 4</ons-list-item>
+        <ons-list-item>Item 5</ons-list-item>
+        <ons-list-item>Item 6</ons-list-item>
+      </ons-list>
     </p>
   </ons-page>
+
 </template>
 
 <template id="menu.html">
@@ -53,14 +65,8 @@
         </ons-toolbar-button>
       </div>
       <div class="center">
-        Menú del día:
+        Menú del día
       </div>
-    </ons-toolbar>
-    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-      - Pasta con albóndigas<br/>
-      - Cacahuates al vapor<br/>
-    </p>
-  </ons-page>
 </template>
 
 <template id="productos.html">
@@ -72,13 +78,15 @@
           </ons-toolbar-button>
         </div>
         <div class="center">
-          Los productos ofrecidos.
+          Productos ofrecidos.
         </div>
       </ons-toolbar>
-      <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-        - Torta<br/>
-        - Merengadas<br/>
-      </p>
+        <p style="text-align: center; margin-top: 10px;">
+          <ons-search-input
+            placeholder="Buscar producto"
+            onchange="ons.notification.alert('Searched for: ' + this.value)"
+          ></ons-search-input>
+        </p>
     </ons-page>
   </template>
 
@@ -139,8 +147,35 @@
 </template>
 
 <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css"> <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css"> <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <script> //Java apartir de aqui jeje soy perdida
+ons.ready(function() {
+  var pullHook = document.getElementById('pull-hook');
+
+  pullHook.addEventListener('changestate', function(event) {
+    var message = '';
+
+    switch (event.state) {
+      case 'initial':
+        message = 'Pull to refresh';
+        break;
+      case 'preaction':
+        message = 'Release';
+        break;
+      case 'action':
+        message = 'Loading...';
+        break;
+    }
+
+    pullHook.innerHTML = message;
+  });
+
+  pullHook.onAction = function(done) {
+    setTimeout(done, 1000);
+  };
+});
+
 window.fn = {};
 window.fn.open = function() {
   var menu = document.getElementById('menu');
@@ -153,4 +188,7 @@ window.fn.load = function(page) {
   content.load(page)
     .then(menu.close.bind(menu));
 };
+
+
+
 </script>
