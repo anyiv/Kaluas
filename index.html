@@ -1,111 +1,30 @@
-<ons-splitter>
-  <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
-    <ons-page>
-      <ons-list>
-        <ons-list-item onclick="fn.load('home.html')" tappable>
-          Inicio
-        </ons-list-item>
-        <ons-list-item onclick="fn.load('menu.html')" tappable>
-          Menú del Día
-        </ons-list-item>
-        <ons-list-item onclick="fn.load('reservaciones.html')" tappable>
-          Reservaciones
-        </ons-list-item>
-        <ons-list-item onclick="fn.load('opinion.html')" tappable>
-          Registrar opinación
-        </ons-list-item>
-      </ons-list>
-    </ons-page>
-  </ons-splitter-side>
-  <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
-</ons-splitter>
+<ons-page>
+    <div style="text-align: center; margin-top: 30px;">
+      <p>
+        <ons-input id="username" modifier="underbar" placeholder="Username" float></ons-input>
+      </p>
+      <p>
+        <ons-input id="password" modifier="underbar" type="password" placeholder="Password" float></ons-input>
+      </p>
+      <p style="margin-top: 30px;">
+        <ons-button onclick="login()">Sign in</ons-button>
 
-<template id="home.html">
-  <ons-page>
-    <ons-toolbar>
-      <div class="left">
-        <ons-toolbar-button onclick="fn.open()">
-          <ons-icon icon="md-menu"></ons-icon>
-        </ons-toolbar-button>
-      </div>
-      <div class="center">
-        ¡Bienvenido a Kaluas Café!
-      </div>
-    </ons-toolbar>
-    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-      ¡Desliza a la derecha para abrir el menú!
-    </p>
+      </p>
+    </div>
   </ons-page>
-</template>
 
-<template id="menu.html">
-  <ons-page>
-    <ons-toolbar>
-      <div class="left">
-        <ons-toolbar-button onclick="fn.open()">
-          <ons-icon icon="md-menu"></ons-icon>
-        </ons-toolbar-button>
-      </div>
-      <div class="center">
-        Menú del día:
-      </div>
-    </ons-toolbar>
-    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-      - Pasta con albóndigas<br/>
-      - Cacahuates al vapor<br/>
-    </p>
-  </ons-page>
-</template>
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css"> <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css"> <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
 
-<template id="reservaciones.html">
-  <ons-page>
-    <ons-toolbar>
-      <div class="left">
-        <ons-toolbar-button onclick="fn.open()">
-          <ons-icon icon="md-menu"></ons-icon>
-        </ons-toolbar-button>
-      </div>
-      <div class="center">
-        Reservaciones  
-      </div>
-    </ons-toolbar>
-    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-      - Selecciona la fecha<br/>
-      - Selecciona tus productos<br/>
-      - ¡Listo!<br/>
-    </p>
-  </ons-page>
-</template>
 
-<template id="opinion.html">
-  <ons-page>
-    <ons-toolbar>
-      <div class="left">
-        <ons-toolbar-button onclick="fn.open()">
-          <ons-icon icon="md-menu"></ons-icon>
-        </ons-toolbar-button>
-      </div>
-      <div class="center">
-        Opiniones
-      </div>
-    </ons-toolbar>
-    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-      Realiza tus opinaciones acá.
-    </p>
-  </ons-page>
-</template>
-
-<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css"> <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css"> <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-<script>
-window.fn = {};
-window.fn.open = function() {
-  var menu = document.getElementById('menu');
-  menu.open();
-};
-window.fn.load = function(page) {
-  var content = document.getElementById('content');
-  var menu = document.getElementById('menu');
-  content.load(page)
-    .then(menu.close.bind(menu));
-};
-</script>
+  <script>
+var login = function() {
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+  
+    if (username === 'Anyi' && password === '1234') {
+      ons.notification.alert('Congratulations!');
+    } else {
+      ons.notification.alert('Contraseña o usuario incorrecto.');
+    }
+  };
+  </script>

@@ -1,0 +1,156 @@
+<ons-splitter>
+  <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+    <ons-page>
+      <ons-list>
+        <ons-list-item onclick="fn.load('home.html')" tappable>
+          Inicio
+        </ons-list-item>
+        <ons-list-item onclick="fn.load('menu.html')" tappable>
+          Menú del Día
+        </ons-list-item>
+        <ons-list-item onclick="fn.load('productos.html')" tappable>
+            Productos
+          </ons-list-item>
+        <ons-list-item onclick="fn.load('reservaciones.html')" tappable>
+          Reservaciones
+        </ons-list-item>
+        <ons-list-item onclick="fn.load('promociones.html')" tappable>
+         Eventos y promociones
+        </ons-list-item>
+        <ons-list-item onclick="fn.load('opinion.html')" tappable>
+          Registrar opinión.
+        </ons-list-item>
+      </ons-list>
+    </ons-page>
+  </ons-splitter-side>
+  <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+</ons-splitter>
+
+<template id="home.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        ¡Bienvenido a Kaluas Café!
+      </div>
+    </ons-toolbar>
+    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+      ¡Desliza a la derecha para abrir el menú!
+    </p>
+  </ons-page>
+</template>
+
+<template id="menu.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        Menú del día:
+      </div>
+    </ons-toolbar>
+    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+      - Pasta con albóndigas<br/>
+      - Cacahuates al vapor<br/>
+    </p>
+  </ons-page>
+</template>
+
+<template id="productos.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Los productos ofrecidos.
+        </div>
+      </ons-toolbar>
+      <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+        - Torta<br/>
+        - Merengadas<br/>
+      </p>
+    </ons-page>
+  </template>
+
+<template id="reservaciones.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        Reservaciones
+      </div>
+    </ons-toolbar>
+    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+     Haz tu reservación ahora!<br/>
+     Consulta tu reservación!<br/>
+    </p>
+  </ons-page>
+</template>
+
+<template id="promociones.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Eventos y promociones
+        </div>
+      </ons-toolbar>
+      <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+          Lleva 2 por una :D<br/>
+          Te llevamos el producto hasta tu casa!<br/>
+      </p>
+    </ons-page>
+  </template>
+
+<template id="opinion.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        Opiniones
+      </div>
+    </ons-toolbar>
+    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+      Realiza tus opiniones bien por acá.
+    </p>
+  </ons-page>
+</template>
+
+<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css"> <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css"> <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+
+<script> //Java apartir de aqui jeje soy perdida
+window.fn = {};
+window.fn.open = function() {
+  var menu = document.getElementById('menu');
+  menu.open();
+};
+
+window.fn.load = function(page) {
+  var content = document.getElementById('content');
+  var menu = document.getElementById('menu');
+  content.load(page)
+    .then(menu.close.bind(menu));
+};
+</script>
