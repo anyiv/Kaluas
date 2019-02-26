@@ -23,7 +23,7 @@
   --segment-active-text-color: #fff;
   --segment-active-background-color: color(var(--segment-color) tint(70%));
   --list-background-color: #ACECA1;
-  --list-header-background-color: #eee;
+  --list-header-background-color: #629460;
   --list-tap-active-background-color: #d9d9d9;
   --list-item-chevron-color: #c7c7cc;
   --progress-bar-color: var(--highlight-color);
@@ -44,7 +44,7 @@
   --range-thumb-background-color: #fff;
   --modal-background-color: rgba(0, 0, 0, 0.7);
   --modal-text-color: #fff;
-  --alert-dialog-background-color: #f4f4f4;
+  --alert-dialog-background-color: #EEEEEE;
   --alert-dialog-text-color: #1f1f21;
   --alert-dialog-button-color: #554348;
   --alert-dialog-separator-color: #ddd;
