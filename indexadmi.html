@@ -192,7 +192,39 @@
           Lleva 2 por una :D<br/>
           Te llevamos el producto hasta tu casa!<br/>
       </p>
+      <ons-fab position="bottom right">
+        <ons-icon icon="md-plus" onclick="fn.load('registrarpromo.html')"></ons-icon>
+      </ons-fab>
     </ons-page>
+</template>
+
+<template id="registrarpromo.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu" style="color:white"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        Kalua's Café
+      </div>
+    </ons-toolbar>
+    <h2 style="text-align: center">Resgistra eventos y promociones.</h2>
+    <div style="text-align: center; opacity: 1; padding-top: 20px;">
+      <ons-icon icon="fa-calendar-alt" size=50px></ons-icon>
+      <p>
+      <ons-input id="username" modifier="underbar" placeholder="Título o tema" float></ons-input><br/><br/>
+      <textarea class="textarea" rows="4" placeholder="Escribe la descripción aquí..."></textarea>
+      </p>
+
+      <p>
+        <ons-button style="background-color: lightcoral" onclick="fn.load('productos.html')">Cancelar</ons-button>
+        <ons-button style="background-color: lightblue">Limpiar</ons-button>
+        <ons-button style="background-color: lightgreen" onclick="ons.notification.alert('Producto guardado con éxito.');">Incluir</ons-button>
+      </p>
+    </div>
+  </ons-page>
 </template>
 
 <template id="opinion.html">
