@@ -4,7 +4,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css"> <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css"> <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-<ons-navigator swipeable id="myNavigator" page="productos.html"></ons-navigator>
+
 
 <body>
 <ons-splitter>
@@ -118,6 +118,9 @@
                   <div class="panel-body">Foto Descripción Disponible</div>
               </div>
           </p>
+          <ons-fab position="bottom right">
+              <ons-icon icon="md-plus"></ons-icon>
+            </ons-fab>
     </ons-page>
 </template>
 
@@ -132,11 +135,18 @@
       <div class="center">
         Reservaciones
       </div>
-    </ons-toolbar>
-    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-     Haz tu reservación ahora!<br/>
-     Consulta tu reservación!<br/>
-    </p>
+      </ons-toolbar>
+      <br/>
+      <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-3" style="background-color:yellow;">
+            <p>p</p>
+          </div>
+          <div class="col-md-9" style="background-color:pink;">
+            <p>a</p>
+          </div>
+          </div>
+        </div>
   </ons-page>
 </template>
 
@@ -206,6 +216,8 @@
     </ons-page>
   </template>
 </body>
+
+
 <script>
 $(document).on('changestate', '#pull-hook', function(){
   var pullHook = document.getElementById('pull-hook');
@@ -249,17 +261,5 @@ ons.ready(function() {
     content.load(page)
       .then(menu.close.bind(menu));
   };
-  
-  document.addEventListener('init', function(event) {
-  var page = event.target;
-
-  if (page.id === 'page1') {
-    page.querySelector('#push-button').onclick = function() {
-      document.querySelector('#myNavigator').pushPage('page2.html', {data: {title: 'Page 2'}});
-    };
-  } else if (page.id === 'page2') {
-    page.querySelector('ons-toolbar .center').innerHTML = page.data.title;
-  }
-});
 </script>
 </html>
