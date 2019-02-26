@@ -1,9 +1,12 @@
+<html>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css"> <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css"> <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
 
+
+<body>
 <ons-splitter>
   <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
     <ons-page>
@@ -35,16 +38,10 @@
 
 <template id="home.html">
   <ons-page>
-      <ons-popover direction="up" id="popover">
-          <div style="padding: 10px; text-align: center;">
-            <p>
-              This is a popover
-            </p>
-            <p>
-              <ons-button onclick="hidePopover()">Close</ons-button>
-            </p>
-          </div>
-        </ons-popover>
+      <ons-pull-hook id="pull-hook">
+        Pull to refresh
+      </ons-pull-hook>
+
    <ons-toolbar>
       <div class="left">
         <ons-toolbar-button onclick="fn.open()">
@@ -55,10 +52,6 @@
         ¡Bienvenido a Kaluas Café!
       </div>
     </ons-toolbar>
-    <ons-pull-hook id="pull-hook">
-        Pull to refresh
-      </ons-pull-hook>
-      
     <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
       Menú del día
         <div class="panel panel-primary">
@@ -67,7 +60,7 @@
         </div>
     </p>
 
-    <ons-fab position="bottom right" onclick="showPopover(this)">
+    <ons-fab position="bottom right" onclick="$('#opinion').modal('show');">
       <ons-icon icon="fa-comment"></ons-icon>
     </ons-fab>
   </ons-page>
@@ -106,7 +99,7 @@
           ></ons-search-input>
         </p>
     </ons-page>
-  </template>
+</template>
 
 <template id="reservaciones.html">
   <ons-page>
@@ -163,9 +156,9 @@
     </p>
   </ons-page>
 </template>
-
+</body>
 <script>
-ons.ready(function() {
+$(document).on('changestate', '#pull-hook', function(){
   var pullHook = document.getElementById('pull-hook');
 
   pullHook.addEventListener('changestate', function(event) {
@@ -184,6 +177,10 @@ ons.ready(function() {
     }
 
     pullHook.innerHTML = message;
+});
+
+ons.ready(function() {
+
   });
 
   pullHook.onAction = function(done) {
@@ -216,3 +213,4 @@ ons.ready(function() {
       .hide();
   };
 </script>
+</html>
