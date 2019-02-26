@@ -14,21 +14,27 @@
     <ons-page>
       <ons-list>
         <ons-list-item onclick="fn.load('home.html')" tappable>
+          <div class="left"><ons-icon icon="fa-home" size=15px></ons-icon></div>
           Inicio
         </ons-list-item>
         <ons-list-item onclick="fn.load('productos.html')" tappable>
+          <div class="left"><ons-icon icon="fa-mug-hot" size=15px></ons-icon></div>
             Productos
           </ons-list-item>
         <ons-list-item onclick="fn.load('reservaciones.html')" tappable>
+          <div class="left"><ons-icon icon="fa-utensils" size=15px></ons-icon> </div>
           Reservaciones
         </ons-list-item>
         <ons-list-item onclick="fn.load('promociones.html')" tappable>
+          <div class="left"><ons-icon icon="fa-gifts" size=15px></ons-icon> </div>
          Eventos y promociones
         </ons-list-item>
         <ons-list-item onclick="fn.load('opinion.html')" tappable>
+          <div class="left"><ons-icon icon="fa-comment" size=15px></ons-icon> </div>
           ¡Danos tu opinión!
         </ons-list-item>
         <ons-list-item onclick="fn.load('nosotros.html')" tappable>
+          <div class="left"><ons-icon icon="fa-users" size=15px></ons-icon> </div>
           Sobre nosotros.
           </ons-list-item>
       </ons-list>
@@ -54,8 +60,8 @@
       </p>
 
       <p>
-        <ons-button style="background-color: darkgreen" onclick="document.getElementById('my-dialog').hide();">Enviar</ons-button>
-        <ons-button style="background-color: darkred" onclick="document.getElementById('my-dialog').hide();">Cancelar</ons-button>
+        <ons-button style="background-color: lightgreen" onclick="ons.notification.alert('Opinión enviada con éxito.'); document.getElementById('my-dialog').hide();">Enviar</ons-button>
+        <ons-button style="background-color: lightcoral" onclick="document.getElementById('my-dialog').hide();">Cancelar</ons-button>
       </p>
     </div>
   </ons-dialog>
@@ -70,33 +76,53 @@
         ¡Bienvenido a Kaluas Café!
       </div>
     </ons-toolbar>
-    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-      Menú del día
-        <ons-card>
-          <b>Helado de Bainiya</b>
+    <br/><h3 style="margin:auto; text-align:center;">Menú del día de hoy</h3><br/>
+      <ons-list style="width:70%; margin:auto;">
+        <ons-list-title>
           <ons-row>
-            <ons-col width=25%>
-              <img src="https://placekitten.com/300/200">
+            <ons-col width=10%>
+              <div class="left">
+                <b>Foto</b>
+              </div>
             </ons-col>
-            <ons-col>
-              <ons-row>
-                Delicioso y dulce helado de vainilla cubierto con chispas de chocolate
-              </ons-row>
-              <br/>
-              <ons-row>
-              Disponible
-              </ons-row>
+            <ons-col width=20%>
+              <div class="right">
+                <b>Producto</b>
+              </div>
             </ons-col>
           </ons-row>
-        </ons-card>
-    </p>
-
-          <div class="panel panel-primary">
-              <div class="panel-heading">Torta de chocolate</div>
-              <div class="panel-body">Foto Descripción Disponible</div>
-          </div>
-      </p>
-
+        </ons-list-title>
+  
+        <ons-list-item tappable>
+            <div class="left">
+              <img class="list-item__thumbnail" src="https://placekitten.com/50/50">
+            </div>
+            <div class="center">
+              Torta de chocolate
+            </div>
+          <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
+        </ons-list-item>
+  
+        <ons-list-item tappable>
+            <div class="left">
+              <img class="list-item__thumbnail" src="https://placekitten.com/g/41/40">
+            </div>
+            <div class="center">
+              Volcán de chocolate
+            </div>
+          <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
+        </ons-list-item>
+  
+        <ons-list-item tappable>
+            <div class="left">
+              <img class="list-item__thumbnail" src="https://placekitten.com/g/40/41">
+            </div>
+            <div class="center">
+              Pie de Limón
+            </div>
+          <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
+        </ons-list-item>
+      </ons-list>
     <ons-fab position="bottom right" onclick="document.getElementById('my-dialog').show();">
       <ons-icon icon="fa-comment"></ons-icon>
     </ons-fab>
@@ -132,9 +158,6 @@
                   <div class="panel-body">Foto Descripción Disponible</div>
               </div>
           </p>
-          <ons-fab position="bottom right">
-              <ons-icon icon="md-plus"></ons-icon>
-            </ons-fab>
     </ons-page>
 </template>
 
@@ -254,8 +277,8 @@
       </p>
 
       <p>
-        <ons-button style="background-color: darkgreen" onclick="document.getElementById('my-dialog').hide();">Enviar</ons-button>
-        <ons-button style="background-color: darkred" onclick="document.getElementById('my-dialog').hide();">Cancelar</ons-button>
+        <ons-button style="background-color: lightgreen" onclick="ons.notification.alert('Opinión enviada con éxito.');">Enviar</ons-button>
+        <ons-button style="background-color: lightcoral" onclick="document.getElementById('my-dialog').hide();">Cancelar</ons-button>
       </p>
     </div>
   </ons-page>
