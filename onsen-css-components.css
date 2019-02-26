@@ -3646,7 +3646,7 @@ h4, h5, h6 {
   line-height: 25px;
   text-transform: uppercase;
   position: relative;
-  background-color: #eee;
+  background-color: #629460;
   background-size: 100% 1px;
   background-repeat: no-repeat;
   background-position: top;
@@ -5130,7 +5130,7 @@ h4, h5, h6 {
           transform: translate(-50%, -50%);
   width: 270px;
   margin: auto;
-  background-color: #f4f4f4;
+  background-color: #EEEEEE;
   border-radius: 8px;
   overflow: visible;
   max-width: 95%;

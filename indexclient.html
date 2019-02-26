@@ -37,6 +37,10 @@
           <div class="left"><ons-icon icon="fa-users" size=15px></ons-icon> </div>
           Sobre nosotros.
           </ons-list-item>
+          <ons-list-item onclick="fn.load('index.html')" tappable>
+            <div class="left"><ons-icon icon="fa-sign-out-alt" size=15px></ons-icon></div>
+            Cerrar sesión
+          </ons-list-item>
       </ons-list>
     </ons-page>
   </ons-splitter-side>
@@ -142,23 +146,44 @@
           </ons-toolbar-button>
         </div>
         <div class="center">
-          Productos ofrecidos.
+          Kalua's Café
         </div>
         </ons-toolbar>
+        <h2 style="text-align: center">Productos ofrecidos.</h2>
         <p style="text-align: center; margin-top: 10px;">
           <ons-search-input
             placeholder="Buscar producto"
             onchange="ons.notification.alert('Searched for: ' + this.value)"
           ></ons-search-input>
         </p>
-        <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-            ¡Nuestros productos!
-              <div class="panel panel-primary">
-                  <div class="panel-heading">Helado de Vainilla</div>
-                  <div class="panel-body">Foto Descripción Disponible</div>
-              </div>
-          </p>
+
+        <ons-list-header><b>Helado de Vainilla</b></ons-list-header>
+        <ons-list-item tappable onclick="createAlertDialog();" style="height: 100px">
+          <div class="left">
+            <img src="https://placekitten.com/40/40">
+          </div>
+          <div class="center">
+            <span class="list-item__title">Vainilla</span><span class="list-item__subtitle">vainillita</span>
+          </div>
+        </ons-list-item>
     </ons-page>
+</template>
+
+<template id="alert-dialog.html">
+  <ons-alert-dialog id="my-alert-dialog" modifier="rowfooter">
+    <div class="alert-dialog-title"> <b>Helado de Vainilla</b></div>
+    <div class="alert-dialog-content">
+      <ons-card>
+        <img src="https://placekitten.com/300/300" style="width: 100%">
+        <div class="content">
+        <h2>madurommlo</h2>
+        </div>
+      </ons-card>
+    </div>
+    <div class="alert-dialog-footer">
+      <ons-alert-dialog-button onclick="hideAlertDialog()">OK</ons-alert-dialog-button>
+    </div>
+  </ons-alert-dialog>
 </template>
 
 <template id="reservaciones.html">
@@ -348,5 +373,25 @@ ons.ready(function() {
     content.load(page)
       .then(menu.close.bind(menu));
   };
+
+  var createAlertDialog = function() {
+  var dialog = document.getElementById('my-alert-dialog');
+
+  if (dialog) {
+    dialog.show();
+  } else {
+    ons.createElement('alert-dialog.html', { append: true })
+      .then(function(dialog) {
+        dialog.show();
+      });
+  }
+};
+
+var hideAlertDialog = function() {
+  document
+    .getElementById('my-alert-dialog')
+    .hide();
+};
+
 </script>
 </html>
