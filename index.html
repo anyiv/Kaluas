@@ -5,8 +5,16 @@
 <link rel="stylesheet" href="onsen-css-components.css">
 <link rel="stylesheet" href="onsen-css-components.min.css">
 
+<body>
 <ons-page>
     <div style="text-align: center; margin-top: 30px;">
+    <ons-if platform="android">
+      <img src="Logo.png" style="width:50%">
+    </ons-if>
+    <ons-if platform="other">
+      <img src="Logo.png" style="width:10%">
+    </ons-if>
+      <h4><i>Bienvenido a Kaluas Café</i></h4>
       <p>
         <ons-input id="username" modifier="underbar" placeholder="Username" float></ons-input>
       </p>
@@ -19,9 +27,7 @@
       </p>
     </div>
   </ons-page>
-
-  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css"> <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css"> <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-
+</body>
 
   <script>
 var login = function() {
