@@ -1,9 +1,12 @@
 <html>
+<head>
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css"> <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css"> <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/onsenui/css/dark-onsen-css-components.css"> <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css"> <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+</head>
 
 <body>
 <ons-splitter>
@@ -33,7 +36,6 @@
   </ons-splitter-side>
   <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
 </ons-splitter>
-
 
 <template id="home.html">
   <ons-page>
@@ -156,7 +158,7 @@
           Te llevamos el producto hasta tu casa!<br/>
       </p>
     </ons-page>
-  </template>
+</template>
 
 <template id="opinion.html">
   <ons-page>
@@ -205,6 +207,7 @@
     </ons-page>
   </template>
 </body>
+
 <script>
 $(document).on('changestate', '#pull-hook', function(){
   var pullHook = document.getElementById('pull-hook');
