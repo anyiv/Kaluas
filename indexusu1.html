@@ -11,9 +11,6 @@
         <ons-list-item onclick="fn.load('home.html')" tappable>
           Inicio
         </ons-list-item>
-        <ons-list-item onclick="fn.load('menu.html')" tappable>
-          Menú del Día
-        </ons-list-item>
         <ons-list-item onclick="fn.load('productos.html')" tappable>
             Productos
           </ons-list-item>
@@ -24,8 +21,11 @@
          Eventos y promociones
         </ons-list-item>
         <ons-list-item onclick="fn.load('opinion.html')" tappable>
-          Registrar opinión.
+          ¡Danos tu opinión!
         </ons-list-item>
+        <ons-list-item onclick="fn.load('nosotros.html')" tappable>
+          Sobre nosotros.
+          </ons-list-item>
       </ons-list>
     </ons-page>
   </ons-splitter-side>
@@ -58,7 +58,7 @@
     <ons-pull-hook id="pull-hook">
         Pull to refresh
       </ons-pull-hook>
-      
+
     <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
       Menú del día
         <div class="panel panel-primary">
@@ -67,6 +67,12 @@
         </div>
     </p>
 
+          <div class="panel panel-primary">
+              <div class="panel-heading">Torta de chocolate</div>
+              <div class="panel-body">Foto Descripción Disponible</div>
+          </div>
+      </p>
+
     <ons-fab position="bottom right" onclick="showPopover(this)">
       <ons-icon icon="fa-comment"></ons-icon>
     </ons-fab>
@@ -74,23 +80,13 @@
 
 </template>
 
-<template id="menu.html">
-  <ons-page>
-    <ons-toolbar>
-      <div class="left">
-        <ons-toolbar-button onclick="fn.open()">
-          <ons-icon icon="md-menu"></ons-icon>
-        </ons-toolbar-button>
-      </div>
-      <div class="center">
-        Menú del día
-      </div>
-</template>
-
 <template id="productos.html">
     <ons-page>
       <ons-toolbar>
         <div class="left">
+            <ons-pull-hook id="pull-hook">
+                Pull to refresh
+              </ons-pull-hook>
           <ons-toolbar-button onclick="fn.open()">
             <ons-icon icon="md-menu"></ons-icon>
           </ons-toolbar-button>
@@ -98,13 +94,20 @@
         <div class="center">
           Productos ofrecidos.
         </div>
-      </ons-toolbar>
+        </ons-toolbar>
         <p style="text-align: center; margin-top: 10px;">
           <ons-search-input
             placeholder="Buscar producto"
             onchange="ons.notification.alert('Searched for: ' + this.value)"
           ></ons-search-input>
         </p>
+        <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+            ¡Nuestros productos!
+              <div class="panel panel-primary">
+                  <div class="panel-heading">Helado de Vainilla</div>
+                  <div class="panel-body">Foto Descripción Disponible</div>
+              </div>
+          </p>
     </ons-page>
   </template>
 
@@ -155,7 +158,7 @@
         </ons-toolbar-button>
       </div>
       <div class="center">
-        Opiniones
+        ¡Danos tu opinión!
       </div>
     </ons-toolbar>
     <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
@@ -163,6 +166,25 @@
     </p>
   </ons-page>
 </template>
+
+<template id="nosotros.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Sobre Nosotros
+        </div>
+      </ons-toolbar>
+      <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+       Somos es nosotros<br/>
+       Dir<br/>
+      </p>
+    </ons-page>
+  </template>
 
 <script>
 ons.ready(function() {
