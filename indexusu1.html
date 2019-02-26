@@ -42,6 +42,23 @@
         Pull to refresh
       </ons-pull-hook>
 
+  <ons-dialog id="my-dialog">
+    <div style="text-align: center; padding: 10px;">
+      <i class="fa fa-comments"></i>
+      <p>
+      ¡Danos tu opinión!<br/><br/>
+      <ons-input id="username" modifier="underbar" placeholder="Correo electrónico:" float></ons-input><br/><br/>
+      <ons-input id="username" modifier="underbar" placeholder="Tema:" float></ons-input><br/><br/>
+      <textarea class="textarea" rows="4" placeholder="Tu opinión aquí..."></textarea>
+      </p>
+
+      <p>
+        <ons-button style="background-color: darkgreen" onclick="document.getElementById('my-dialog').hide();">Enviar</ons-button>
+        <ons-button style="background-color: darkred" onclick="document.getElementById('my-dialog').hide();">Cancelar</ons-button>
+      </p>
+    </div>
+  </ons-dialog>
+
    <ons-toolbar>
       <div class="left">
         <ons-toolbar-button onclick="fn.open()">
@@ -66,7 +83,7 @@
           </div>
       </p>
 
-    <ons-fab position="bottom right" onclick="showPopover(this)">
+    <ons-fab position="bottom right" onclick="document.getElementById('my-dialog').show();">
       <ons-icon icon="fa-comment"></ons-icon>
     </ons-fab>
   </ons-page>
@@ -157,9 +174,19 @@
         ¡Danos tu opinión!
       </div>
     </ons-toolbar>
-    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-      Realiza tus opiniones bien por acá.
-    </p>
+    <div style="text-align: center; opacity: 1; padding-top: 20px;">
+      <i class="fa fa-comments"></i>
+      <p>
+      <ons-input id="username" modifier="underbar" placeholder="Correo electrónico:" float></ons-input><br/><br/>
+      <ons-input id="username" modifier="underbar" placeholder="Tema:" float></ons-input><br/><br/>
+      <textarea class="textarea" rows="4" placeholder="Tu opinión aquí..."></textarea>
+      </p>
+
+      <p>
+        <ons-button style="background-color: darkgreen" onclick="document.getElementById('my-dialog').hide();">Enviar</ons-button>
+        <ons-button style="background-color: darkred" onclick="document.getElementById('my-dialog').hide();">Cancelar</ons-button>
+      </p>
+    </div>
   </ons-page>
 </template>
 
@@ -181,7 +208,7 @@
       </p>
     </ons-page>
   </template>
-
+</body>
 <script>
 $(document).on('changestate', '#pull-hook', function(){
   var pullHook = document.getElementById('pull-hook');
