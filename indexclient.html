@@ -70,33 +70,54 @@
         ¡Bienvenido a Kaluas Café!
       </div>
     </ons-toolbar>
-    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-      Menú del día
-        <ons-card>
-          <b>Helado de Bainiya</b>
-          <ons-row>
-            <ons-col width=25%>
-              <img src="https://placekitten.com/300/200">
-            </ons-col>
-            <ons-col>
-              <ons-row>
-                Delicioso y dulce helado de vainilla cubierto con chispas de chocolate
-              </ons-row>
-              <br/>
-              <ons-row>
-              Disponible
-              </ons-row>
-            </ons-col>
-          </ons-row>
-        </ons-card>
-    </p>
+    <br/>
+    <h3 style="margin:auto; text-align:center;">Menú del día de hoy</h3><br/>
+    <ons-list style="width:70%; margin:auto;">
+      <ons-list-title>
+        <ons-row>
+          <ons-col width=10%>
+            <div class="left">
+              <b>Foto</b>
+            </div>
+          </ons-col>
+          <ons-col width=20%>
+            <div class="right">
+              <b>Producto</b>
+            </div>
+          </ons-col>
+        </ons-row>
+      </ons-list-title>
 
-          <div class="panel panel-primary">
-              <div class="panel-heading">Torta de chocolate</div>
-              <div class="panel-body">Foto Descripción Disponible</div>
+      <ons-list-item tappable>
+          <div class="left">
+            <img class="list-item__thumbnail" src="https://placekitten.com/50/50">
           </div>
-      </p>
+          <div class="center">
+            Torta de chocolate
+          </div>
+        <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
+      </ons-list-item>
 
+      <ons-list-item tappable>
+          <div class="left">
+            <img class="list-item__thumbnail" src="https://placekitten.com/g/41/40">
+          </div>
+          <div class="center">
+            Volcán de chocolate
+          </div>
+        <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
+      </ons-list-item>
+
+      <ons-list-item tappable>
+          <div class="left">
+            <img class="list-item__thumbnail" src="https://placekitten.com/g/40/41">
+          </div>
+          <div class="center">
+            Pie de Limón
+          </div>
+        <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
+      </ons-list-item>
+    </ons-list>
     <ons-fab position="bottom right" onclick="document.getElementById('my-dialog').show();">
       <ons-icon icon="fa-comment"></ons-icon>
     </ons-fab>
@@ -206,11 +227,97 @@
                 </div>
               <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
             </ons-list-item>
+
+            <ons-list-item tappable>
+              <span class="list-item__subtitle"><b>Nota: La reservación será válida solo durante una hora.</b></span>
+            </ons-list-item>
+          </ons-list>
+
+          <div style="margin:auto; text-align:center;">
+          <br/>
+            <ons-input type="time" placeholder="Hora:" modifier="underbar" id="hora" required></ons-input><br/><br/>
+            <ons-button onclick="ons.notification.alert('Reservación guardada con éxito.'); fn.load('modificarreservacion.html');">Guardar</ons-button>
+          </div>
+  </ons-page>
+</template>
+
+<template id="modificarreservacion.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu" style="color:white"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        Reservaciones
+      </div>
+      </ons-toolbar>
+      <br/>
+        <h2 style="text-align: center">¡Haz tu reservación!</h2>
+          <ons-list style="width:70%; margin:auto;">
+            <ons-list-title>
+              <ons-row>
+                <ons-col width=80%>
+                  <div class="left">
+                    <b>Producto</b>
+                  </div>
+                </ons-col>
+                <ons-col width=20%>
+                  <div class="right">
+                    <b>Cantidad</b>
+                  </div>
+                </ons-col>
+              </ons-row>
+            </ons-list-title>
+
+            <ons-list-item tappable>
+                <div class="left">
+                  <img class="list-item__thumbnail" src="https://placekitten.com/g/40/40">
+                </div>
+                <div class="center">
+                  Torta de chocolate
+                </div>
+                <div class="right">
+                <ons-input type="text" placeholder="Cant" width=20% value="1">
+                </div>
+            </ons-list-item>
+
+            <ons-list-item tappable>
+                <div class="left">
+                  <img class="list-item__thumbnail" src="https://placekitten.com/g/41/40">
+                </div>
+                <div class="center">
+                  Volcán de chocolate
+                </div>
+                <div class="right">
+                <ons-input type="text" placeholder="Cant" width=20% value="2">
+                </div>
+            </ons-list-item>
+
+            <ons-list-item tappable>
+                <div class="left">
+                  <img class="list-item__thumbnail" src="https://placekitten.com/g/40/41">
+                </div>
+                <div class="center">
+                  Pie de Limón
+                </div>
+                <div class="right">
+                <ons-input type="text" placeholder="Cant" width=20% value="1">
+                </div>
+            </ons-list-item>
             
             <ons-list-item tappable>
               <span class="list-item__subtitle"><b>Nota: La reservación será válida solo durante una hora.</b></span>
             </ons-list-item>
           </ons-list>
+
+          <div style="margin:auto; text-align:center;">
+          <br/>
+            <ons-input type="text" placeholder="Hora:" modifier="underbar" required value="01:00 p.m."></ons-input><br/><br/>
+            <ons-button onclick="ons.notification.alert('Reservación modificada con éxito.'); fn.load('home.html');">Modificar</ons-button>
+            <ons-button onclick="ons.notification.alert('Reservación cancelada con éxito.'); fn.load('home.html');">Cancelar</ons-button>
+          </div>
   </ons-page>
 </template>
 
