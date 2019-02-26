@@ -5,8 +5,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<<<<<<< HEAD
 <link rel="stylesheet" href="https://unpkg.com/onsenui/css/dark-onsen-css-components.css"> <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css"> <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
 </head>
+=======
+<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css"> <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css"> <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+<<<<<<< HEAD
+
+=======
+>>>>>>> b3ed6ffb4d95d9550adda126da6d040b74afa55c
+>>>>>>> c0c621a0c2746f50034d61b7f09be046657e4da2
 
 <body>
 <ons-splitter>
@@ -119,6 +127,9 @@
                   <div class="panel-body">Foto Descripción Disponible</div>
               </div>
           </p>
+          <ons-fab position="bottom right">
+              <ons-icon icon="md-plus"></ons-icon>
+            </ons-fab>
     </ons-page>
 </template>
 
@@ -133,11 +144,34 @@
       <div class="center">
         Reservaciones
       </div>
-    </ons-toolbar>
-    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-     Haz tu reservación ahora!<br/>
-     Consulta tu reservación!<br/>
-    </p>
+      </ons-toolbar>
+      <br/>
+      <div class="container">
+          <h2 style="text-align: center">¡Haz tu reservación!</h2>
+            <table class="table table-bordered" style="width:75%; margin:auto; vertical-align: center;">
+            <thead>
+              <tr>
+                <th>Productos</th>
+                <th style="width:20%">Cantidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>  <input type="checkbox" ></input> Torta de chocolate</td>
+                <td><input type="text" placeholder="Cant"></td>
+              </tr>
+              <tr>
+                <td>  <input type="checkbox"></input> Volcan</td>
+                <td><input type="text" placeholder="Cant"></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></input> Pie de limón</td>
+                <td><input type="text" placeholder="Cant"></td>          
+                  </tr>
+            </tbody>
+          </table>
+        </div>
+        
   </ons-page>
 </template>
 
