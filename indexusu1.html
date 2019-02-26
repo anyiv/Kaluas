@@ -1,3 +1,9 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css"> <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css"> <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+
 <ons-splitter>
   <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
     <ons-page>
@@ -26,9 +32,20 @@
   <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
 </ons-splitter>
 
+
 <template id="home.html">
   <ons-page>
-    <ons-toolbar>
+      <ons-popover direction="up" id="popover">
+          <div style="padding: 10px; text-align: center;">
+            <p>
+              This is a popover
+            </p>
+            <p>
+              <ons-button onclick="hidePopover()">Close</ons-button>
+            </p>
+          </div>
+        </ons-popover>
+   <ons-toolbar>
       <div class="left">
         <ons-toolbar-button onclick="fn.open()">
           <ons-icon icon="md-menu"></ons-icon>
@@ -39,19 +56,20 @@
       </div>
     </ons-toolbar>
     <ons-pull-hook id="pull-hook">
-      Pull to refresh
-    </ons-pull-hook>
+        Pull to refresh
+      </ons-pull-hook>
+      
     <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
       Menú del día
-      <ons-list>
-        <ons-list-item><div class=""></div></ons-list-item>
-        <ons-list-item>Item 2</ons-list-item>
-        <ons-list-item>Item 3</ons-list-item>
-        <ons-list-item>Item 4</ons-list-item>
-        <ons-list-item>Item 5</ons-list-item>
-        <ons-list-item>Item 6</ons-list-item>
-      </ons-list>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Helado de Vainilla</div>
+            <div class="panel-body">Foto Descripción Disponible</div>
+        </div>
     </p>
+
+    <ons-fab position="bottom right" onclick="showPopover(this)">
+      <ons-icon icon="fa-comment"></ons-icon>
+    </ons-fab>
   </ons-page>
 
 </template>
@@ -146,10 +164,7 @@
   </ons-page>
 </template>
 
-<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css"> <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css"> <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-<script> //Java apartir de aqui jeje soy perdida
+<script>
 ons.ready(function() {
   var pullHook = document.getElementById('pull-hook');
 
@@ -175,20 +190,29 @@ ons.ready(function() {
     setTimeout(done, 1000);
   };
 });
-
-window.fn = {};
-window.fn.open = function() {
-  var menu = document.getElementById('menu');
-  menu.open();
-};
-
-window.fn.load = function(page) {
-  var content = document.getElementById('content');
-  var menu = document.getElementById('menu');
-  content.load(page)
-    .then(menu.close.bind(menu));
-};
-
-
-
+  
+  window.fn = {};
+  window.fn.open = function() {
+    var menu = document.getElementById('menu');
+    menu.open();
+  };
+  
+  window.fn.load = function(page) {
+    var content = document.getElementById('content');
+    var menu = document.getElementById('menu');
+    content.load(page)
+      .then(menu.close.bind(menu));
+  };
+  
+  var showPopover = function(target) {
+    document
+      .getElementById('popover')
+      .show(target);
+  };
+  
+  var hidePopover = function() {
+    document
+      .getElementById('popover')
+      .hide();
+  };
 </script>
