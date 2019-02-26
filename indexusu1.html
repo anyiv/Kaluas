@@ -1,20 +1,11 @@
 <html>
 <head>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<<<<<<< HEAD
-<link rel="stylesheet" href="https://unpkg.com/onsenui/css/dark-onsen-css-components.css"> <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css"> <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-</head>
-=======
 <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css"> <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css"> <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-<<<<<<< HEAD
 
-=======
->>>>>>> b3ed6ffb4d95d9550adda126da6d040b74afa55c
->>>>>>> c0c621a0c2746f50034d61b7f09be046657e4da2
+</head>
 
 <body>
 <ons-splitter>
@@ -80,10 +71,23 @@
     </ons-toolbar>
     <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
       Menú del día
-        <div class="panel panel-primary">
-            <div class="panel-heading">Helado de Vainilla</div>
-            <div class="panel-body">Foto Descripción Disponible</div>
-        </div>
+        <ons-card>
+          <b>Helado de Bainiya</b>
+          <ons-row>
+            <ons-col width=25%>
+              <img src="https://placekitten.com/300/200">
+            </ons-col>
+            <ons-col>
+              <ons-row>
+                Delicioso y dulce helado de vainilla cubierto con chispas de chocolate
+              </ons-row>
+              <br/>
+              <ons-row>
+              Disponible
+              </ons-row>
+            </ons-col>
+          </ons-row>
+        </ons-card>
     </p>
 
           <div class="panel panel-primary">
@@ -146,44 +150,66 @@
       </div>
       </ons-toolbar>
       <br/>
-      <div class="container">
-          <h2 style="text-align: center">¡Haz tu reservación!</h2>
-            <table class="table table-bordered" style="width:75%; margin:auto; vertical-align: center;">
-            <thead>
-              <tr>
-                <th>Productos</th>
-                <th style="width:20%">Cantidad</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>  <input type="checkbox" ></input> Torta de chocolate</td>
-                <td><input type="text" placeholder="Cant"></td>
-              </tr>
-              <tr>
-                <td>  <input type="checkbox"></input> Volcan</td>
-                <td><input type="text" placeholder="Cant"></td>
-              </tr>
-              <tr>
-                <td><input type="checkbox"></input> Pie de limón</td>
-                <td><input type="text" placeholder="Cant"></td>          
-                  </tr>
-            </tbody>
-          </table>
-        </div>
-        
-        <div class="container">
-            <table class="table table-bordered" style="width:75%; margin:auto; vertical-align: center;">
-            <thead>
-              <tr>
-                <th>Nota: La reservación será válida solo durante una hora.</th>
-              </tr>
-            </thead>
-            <tbody>
-            </tbody>
-          </table>
-        </div>
+        <h2 style="text-align: center">¡Haz tu reservación!</h2>
+          <ons-list style="width:70%; margin:auto;">
+            <ons-list-title>
+              <ons-row>
+                <ons-col width=80%>
+                  <div class="left">
+                    <b>Producto</b>
+                  </div>
+                </ons-col>
+                <ons-col width=20%>
+                  <div class="right">
+                    <b>Cantidad</b>
+                  </div>
+                </ons-col>
+              </ons-row>
+            </ons-list-title>
 
+            <ons-list-item tappable>
+                <div class="left">
+                  <img class="list-item__thumbnail" src="https://placekitten.com/g/40/40">
+                </div>
+                <div class="center">
+                  Torta de chocolate
+                </div>
+                <div class="right">
+                <ons-input type="text" placeholder="Cant" width=20%>
+                </div>
+              <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
+            </ons-list-item>
+
+            <ons-list-item tappable>
+                <div class="left">
+                  <img class="list-item__thumbnail" src="https://placekitten.com/g/41/40">
+                </div>
+                <div class="center">
+                  Volcán de chocolate
+                </div>
+                <div class="right">
+                <ons-input type="text" placeholder="Cant" width=20%>
+                </div>
+              <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
+            </ons-list-item>
+
+            <ons-list-item tappable>
+                <div class="left">
+                  <img class="list-item__thumbnail" src="https://placekitten.com/g/40/41">
+                </div>
+                <div class="center">
+                  Pie de Limón
+                </div>
+                <div class="right">
+                <ons-input type="text" placeholder="Cant" width=20%>
+                </div>
+              <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
+            </ons-list-item>
+            
+            <ons-list-item tappable>
+              <span class="list-item__subtitle"><b>Nota: La reservación será válida solo durante una hora.</b></span>
+            </ons-list-item>
+          </ons-list>
   </ons-page>
 </template>
 
