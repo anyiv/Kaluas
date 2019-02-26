@@ -1,7 +1,5 @@
 <html>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css"> <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css"> <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
 <link rel="stylesheet" href="theme.css">
@@ -14,19 +12,24 @@
     <ons-page>
       <ons-list>
         <ons-list-item onclick="fn.load('home.html')" tappable>
-          Inicio
+          <div class="left"><ons-icon icon="fa-home" size=15px></ons-icon></div>
+          <div class="center">Inicio</div>
         </ons-list-item>
         <ons-list-item onclick="fn.load('productos.html')" tappable>
-          Productos
+          <div class="left"><ons-icon icon="fa-mug-hot" size=15px></ons-icon></div>
+          <div class="center">Productos</div>
         </ons-list-item>
         <ons-list-item onclick="fn.load('reservaciones.html')" tappable>
-          Reservaciones
+        <div class="left"><ons-icon icon="fa-utensils" size=15px></ons-icon> </div>
+          <div class="center">Reservaciones</div>
         </ons-list-item>
         <ons-list-item onclick="fn.load('promociones.html')" tappable>
-         Eventos y promociones
+        <div class="left"><ons-icon icon="fa-gifts" size=15px></ons-icon> </div>
+         <div class="center">Eventos y promociones</div>
         </ons-list-item>
         <ons-list-item onclick="fn.load('opinion.html')" tappable>
-         Reporte de opiniones
+        <div class="left"><ons-icon icon="fa-chart-line" size=15px></ons-icon> </div>
+         <div class="center">Reporte de opiniones</div>
         </ons-list-item>
       </ons-list>
     </ons-page>
@@ -50,22 +53,65 @@
         ¡Bienvenido a Kaluas Café!
       </div>
     </ons-toolbar>
-    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-      Menú del día
-        <div class="panel panel-primary">
-            <div class="panel-heading">Helado de Vainilla</div>
-            <div class="panel-body">Foto Descripción Disponible</div>
-        </div>
-    </p>
+    <br/>
+    <h3 style="margin:auto; text-align:center;">Menú del día de hoy</h3><br/>
+    <ons-list style="width:70%; margin:auto;">
+      <ons-list-title>
+        <ons-row>
+          <ons-col width=10%>
+            <div class="left">
+              <b>Foto</b>
+            </div>
+          </ons-col>
+          <ons-col width=20%>
+            <div class="right">
+              <b>Producto</b>
+            </div>
+          </ons-col>
+        </ons-row>
+      </ons-list-title>
 
-          <div class="panel panel-primary">
-              <div class="panel-heading">Torta de chocolate</div>
-              <div class="panel-body">Foto Descripción Disponible</div>
+      <ons-list-item tappable>
+          <div class="left">
+            <img class="list-item__thumbnail" src="https://placekitten.com/50/50">
           </div>
-      </p>
-      <ons-fab position="bottom right">
-        <ons-icon icon="md-plus" onclick="fn.load('crearmenu.html')"></ons-icon>
+          <div class="center">
+            Torta de chocolate
+          </div>
+        <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
+      </ons-list-item>
+
+      <ons-list-item tappable>
+          <div class="left">
+            <img class="list-item__thumbnail" src="https://placekitten.com/g/41/40">
+          </div>
+          <div class="center">
+            Volcán de chocolate
+          </div>
+        <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
+      </ons-list-item>
+
+      <ons-list-item tappable>
+          <div class="left">
+            <img class="list-item__thumbnail" src="https://placekitten.com/g/40/41">
+          </div>
+          <div class="center">
+            Pie de Limón
+          </div>
+        <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
+      </ons-list-item>
+    </ons-list>
+    <ons-speed-dial position="bottom right" direction="up">
+      <ons-fab>
+        <ons-icon icon="fa-ellipsis-h"></ons-icon>
       </ons-fab>
+      <ons-speed-dial-item onclick="fn.load('crearmenu.html');">
+        <ons-icon icon="fa-plus"></ons-icon>
+      </ons-speed-dial-item>
+      <ons-speed-dial-item>
+        <ons-icon icon="fa-edit" size=20px></ons-icon>
+      </ons-speed-dial-item>
+    </ons-speed-dial>
     </ons-page>
 
 </template>
@@ -83,8 +129,6 @@
       </div>
     </ons-toolbar>
     <div style="text-align: center; opacity: 1; padding-top: 20px;">
-
-
       <p>
         <ons-button style="background-color: lightcoral" onclick="fn.load('home.html')">Cancelar</ons-button>
                 <ons-button style="background-color: lightblue">Limpiar</ons-button>
@@ -168,11 +212,66 @@
       <div class="center">
         Reservaciones
       </div>
-    </ons-toolbar>
-    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-     Haz tu reservación ahora!<br/>
-     Consulta tu reservación!<br/>
-    </p>
+    </ons-toolbar><br/><br/>
+          <ons-list style="width:70%; margin:auto;">
+            <ons-list-title>
+              <ons-row>
+                <ons-col width=80%>
+                  <div class="left">
+                    <b>Producto</b>
+                  </div>
+                </ons-col>
+                <ons-col width=20%>
+                  <div class="right">
+                    <b>Cantidad</b>
+                  </div>
+                </ons-col>
+              </ons-row>
+            </ons-list-title>
+
+            <ons-list-item tappable>
+                <div class="left">
+                  <img class="list-item__thumbnail" src="https://placekitten.com/g/40/40">
+                </div>
+                <div class="center">
+                  Torta de chocolate
+                </div>
+                <div class="right">
+                <ons-input type="text" placeholder="Cant" width=20%>
+                </div>
+              <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
+            </ons-list-item>
+
+            <ons-list-item tappable>
+                <div class="left">
+                  <img class="list-item__thumbnail" src="https://placekitten.com/g/41/40">
+                </div>
+                <div class="center">
+                  Volcán de chocolate
+                </div>
+                <div class="right">
+                <ons-input type="text" placeholder="Cant" width=20%>
+                </div>
+              <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
+            </ons-list-item>
+
+            <ons-list-item tappable>
+                <div class="left">
+                  <img class="list-item__thumbnail" src="https://placekitten.com/g/40/41">
+                </div>
+                <div class="center">
+                  Pie de Limón
+                </div>
+                <div class="right">
+                <ons-input type="text" placeholder="Cant" width=20%>
+                </div>
+              <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
+            </ons-list-item>
+            
+            <ons-list-item tappable>
+              <span class="list-item__subtitle"><b>Nota: La reservación será válida solo durante una hora.</b></span>
+            </ons-list-item>
+          </ons-list>
   </ons-page>
 </template>
 
