@@ -336,7 +336,7 @@
       </div>
     </ons-toolbar>
     <div style="text-align: center; opacity: 1; padding-top: 20px;">
-      <i class="fa fa-birthday-cake "></i>  <i class="fa fa-coffee"></i>
+      <ons-icon icon="fa-birthday-cake" size=40px></ons-icon> <ons-icon icon="fa-coffee" size=40px></ons-icon>
       <p>
       <ons-input id="username" modifier="underbar" placeholder="Nombre: " float></ons-input><br/><br/>
       <ons-input id="username" modifier="underbar" placeholder="Descripción: " float></ons-input><br/><br/>
@@ -377,8 +377,8 @@
     <div class="alert-dialog-title"> <b><br/> Modificar producto</b></div>
     <div class="alert-dialog-content">
       <ons-card>
-        <div style="text-align: center; opacity: 1; padding-top: 50px; ">
-          <i class="fa fa-birthday-cake "></i>  <i class="fa fa-coffee"></i>
+        <div style="text-align: center; opacity: 1; padding-top: 40px; ">
+          <ons-icon icon="fa-birthday-cake" size=40px></ons-icon> <ons-icon icon="fa-coffee" size=40px></ons-icon>
           <p>
           <ons-input id="username" modifier="underbar" placeholder="Nombre:" value="Helado de vainilla" float></ons-input><br/><br/>
           <ons-input id="username" modifier="underbar" placeholder="Descripción: " float></ons-input><br/><br/>
@@ -399,7 +399,6 @@
 
     </ons-dialog>
 </template>
-
 
 <template id="reservaciones.html">
   <ons-page>
@@ -724,10 +723,41 @@
         </div>
       </ons-toolbar>
       <h2 style="text-align: center" >Eventos y promociones.</h2>
-      <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-          Lleva 2 por una :D<br/>
-          Te llevamos el producto hasta tu casa!<br/>
-      </p>
+      <div style="text-align: center; opacity: 1; padding-top: 10px;">
+        <ons-icon icon="fa-calendar-check" size=50px></ons-icon>
+      </div> </br>
+      <ons-list style="width:70%; margin:auto;">
+        <ons-list-title>
+          Día de la juventud / 12-02-2019
+        </ons-list-title>
+  
+        <ons-list-item tappable>
+            <div class="left">
+              <img class="list-item__thumbnail" src="https://placekitten.com/60/50">
+            </div>
+            <div class="center">
+              Dos por uno pa los jovenes :D
+            </div>
+          <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
+        </ons-list-item>
+      </ons-list>
+    </br>
+      <ons-list style="width:70%; margin:auto;">
+        <ons-list-title>
+          Día del amor y la amistad / 14-02-2019
+        </ons-list-title>
+  
+        <ons-list-item tappable>
+            <div class="left">
+              <img class="list-item__thumbnail" src="https://placekitten.com/60/60">
+            </div>
+            <div class="center">
+              Dos por uno pa los cachos :D
+            </div>
+          <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
+        </ons-list-item>
+      </ons-list>
+    
       <ons-fab position="bottom right">
         <ons-icon icon="md-plus" onclick="fn.load('registrarpromo.html')"></ons-icon>
       </ons-fab>
@@ -758,7 +788,7 @@
       <p>
         <ons-button style="background-color: lightcoral" onclick="fn.load('promociones.html')">Cancelar</ons-button>
         <ons-button style="background-color: lightblue">Limpiar</ons-button>
-        <ons-button style="background-color: lightgreen" onclick="ons.notification.alert('Promoción incluida con éxito.');">Incluir</ons-button>
+        <ons-button style="background-color: lightgreen" onclick="ons.notification.alert('Promoción incluida con éxito.'); fn.load('promociones.html') ">Incluir</ons-button>
       </p>
     </div>
   </ons-page>
