@@ -1,6 +1,5 @@
 <html>
 <head>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css"> <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css"> <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
@@ -343,8 +342,8 @@
           <div style="margin:auto; text-align:center;">
           <br/>
             <ons-input type="text" placeholder="Hora:" modifier="underbar" required value="01:00 p.m."></ons-input><br/><br/>
-            <ons-button onclick="ons.notification.alert('Reservación modificada con éxito.'); fn.load('home.html');">Modificar</ons-button>
-            <ons-button onclick="ons.notification.alert('Reservación cancelada con éxito.'); fn.load('home.html');">Cancelar</ons-button>
+            <ons-button style="background-color: lightgreen" onclick="ons.notification.alert('Reservación modificada con éxito.'); fn.load('home.html');">Modificar</ons-button>
+            <ons-button style="background-color: lightcoral" onclick="ons.notification.alert('Reservación cancelada con éxito.'); fn.load('home.html');">Cancelar</ons-button>
           </div>
   </ons-page>
 </template>

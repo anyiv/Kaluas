@@ -31,7 +31,7 @@
         <div class="left"><ons-icon icon="fa-chart-line" size=15px></ons-icon> </div>
          <div class="center">Reporte de opiniones</div>
         </ons-list-item>
-        <ons-list-item onclick="fn.load('index.html')" tappable>
+        <ons-list-item onclick="window.location.replace('index.html');" tappable>
           <div class="left"><ons-icon icon="fa-sign-out-alt" size=15px></ons-icon></div>
           Cerrar sesión
         </ons-list-item>
@@ -131,11 +131,71 @@
         Crear menú del día
       </div>
     </ons-toolbar>
+    <br/><br/><br/>
+
+    <ons-list style="width:70%; margin:auto;">
+      <ons-list-title>
+        <ons-row>
+          <ons-col width=80%>
+            <div class="left">
+              <b>Producto</b>
+            </div>
+          </ons-col>
+        </ons-row>
+      </ons-list-title>
+
+       <ons-list-item tappable>
+        <div class="left">
+          <ons-checkbox input-id="check-2"></ons-checkbox>
+        </div>
+        <div for="check-2" class="center">
+          Torta de cholocate
+        </div>
+    </ons-list-item>
+
+    <ons-list-item tappable>
+      <div class="left">
+        <ons-checkbox input-id="check-2"></ons-checkbox>
+      </div>
+      <div for="check-2" class="center">
+        Volcán
+      </div>
+  </ons-list-item>
+    
+  <ons-list-item tappable>
+    <div class="left">
+      <ons-checkbox input-id="check-2"></ons-checkbox>
+    </div>
+    <div for="check-2" class="center">
+      Café Moccacino
+    </div>
+</ons-list-item>
+
+<ons-list-item tappable>
+  <div class="left">
+    <ons-checkbox input-id="check-2"></ons-checkbox>
+  </div>
+  <div for="check-2" class="center">
+    Torta Red Velvet
+  </div>
+</ons-list-item>
+
+<ons-list-item tappable>
+  <div class="left">
+    <ons-checkbox input-id="check-2"></ons-checkbox>
+  </div>
+  <div for="check-2" class="center">
+    Pie de limón
+  </div>
+</ons-list-item>
+
+  </ons-list>
+
     <div style="text-align: center; opacity: 1; padding-top: 20px;">
       <p>
         <ons-button style="background-color: lightcoral" onclick="fn.load('home.html')">Cancelar</ons-button>
                 <ons-button style="background-color: lightblue">Limpiar</ons-button>
-        <ons-button style="background-color: lightgreen" onclick="ons.notification.alert('Menú guardado con éxito.');">Crear </ons-button>
+        <ons-button style="background-color: lightgreen" onclick="ons.notification.alert('Menú guardado con éxito.'); fn.load('home.html') ">Crear </ons-button>
       </p>
     </div>
   </ons-page>
@@ -153,22 +213,25 @@
           </ons-toolbar-button>
         </div>
         <div class="center">
-          Productos ofrecidos.
+          Kalua's Café
         </div>
         </ons-toolbar>
+        <h2 style="text-align: center">Productos ofrecidos</h2>
         <p style="text-align: center; margin-top: 10px;">
           <ons-search-input
             placeholder="Buscar producto"
             onchange="ons.notification.alert('Searched for: ' + this.value)"
           ></ons-search-input>
         </p>
-        <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-            ¡Nuestros productos!
-              <div class="panel panel-primary">
-                  <div class="panel-heading">Helado de Vainilla</div>
-                  <div class="panel-body">Foto Descripción Disponible</div>
-              </div>
-          </p>
+        <ons-list-header><b>Helado de Vainilla</b></ons-list-header>
+        <ons-list-item tappable onclick="createAlertDialog();" style="height: 100px">
+          <div class="left">
+            <img src="https://placekitten.com/40/40">
+          </div>
+          <div class="center">
+            <span class="list-item__title">Vainilla</span><span class="list-item__subtitle">vainillita</span>
+          </div>
+        </ons-list-item>
           <ons-fab position="bottom right">
               <ons-icon icon="md-plus" onclick="fn.load('incluirproducto.html')"></ons-icon>
             </ons-fab>
@@ -198,10 +261,29 @@
       <p>
         <ons-button style="background-color: lightcoral" onclick="fn.load('productos.html')">Cancelar</ons-button>
                 <ons-button style="background-color: lightblue">Limpiar</ons-button>
-        <ons-button style="background-color: lightgreen" onclick="ons.notification.alert('Producto guardado con éxito.');">Incluir</ons-button>
+        <ons-button style="background-color: lightgreen" onclick="ons.notification.alert('Producto guardado con éxito.'); fn.load('productos.html')" >Incluir</ons-button>
       </p>
     </div>
   </ons-page>
+</template>
+
+<template id="alert-dialog.html">
+  <ons-alert-dialog id="my-alert-dialog" modifier="rowfooter">
+    <div class="alert-dialog-title"> <b>Helado de Vainilla</b></div>
+    <div class="alert-dialog-content">
+      <ons-card>
+        <img src="https://placekitten.com/300/300" style="width: 100%">
+        <div class="content">
+        <h2>madurommlo</h2>
+        </div>
+      </ons-card>
+    </div>
+    <div class="alert-dialog-footer">
+      <ons-alert-dialog-button style="background-color: lightblue" onclick="hideAlertDialog()">Cancelar</ons-alert-dialog-button>
+      <ons-alert-dialog-button style="background-color: lightgreen" onclick="hideAlertDialog()">Modificar</ons-alert-dialog-button>
+      <ons-alert-dialog-button style="background-color: lightcoral" onclick="hideAlertDialog()">Eliminar</ons-alert-dialog-button>
+    </div>
+  </ons-alert-dialog>
 </template>
 
 <template id="reservaciones.html">
@@ -336,9 +418,10 @@
         </ons-toolbar-button>
       </div>
       <div class="center">
-        ¡Danos tu opinión!
+        Kalua's Café
       </div>
     </ons-toolbar>
+    <h2 style="text-align:center">Reporte de Opiniones.</h2>
     <div style="text-align: center; opacity: 1; padding-top: 20px;">
       <i class="fa fa-comments"></i>
       <p>
@@ -348,8 +431,8 @@
       </p>
 
       <p>
-        <ons-button style="background-color: darkgreen" onclick="document.getElementById('my-dialog').hide();">Enviar</ons-button>
-        <ons-button style="background-color: darkred" onclick="document.getElementById('my-dialog').hide();">Cancelar</ons-button>
+        <ons-button style="background-color: lightgreen" onclick="document.getElementById('my-dialog').hide();">Enviar</ons-button>
+        <ons-button style="background-color: lightcoral" onclick="document.getElementById('my-dialog').hide();">Cancelar</ons-button>
       </p>
     </div>
   </ons-page>
@@ -396,5 +479,24 @@ $(document).on('changestate', '#pull-hook', function(){
     content.load(page)
       .then(menu.close.bind(menu));
   };
+
+  var createAlertDialog = function() {
+  var dialog = document.getElementById('my-alert-dialog');
+
+  if (dialog) {
+    dialog.show();
+  } else {
+    ons.createElement('alert-dialog.html', { append: true })
+      .then(function(dialog) {
+        dialog.show();
+      });
+  }
+};
+
+var hideAlertDialog = function() {
+  document
+    .getElementById('my-alert-dialog')
+    .hide();
+};
 </script>
 </html>
