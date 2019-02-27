@@ -56,6 +56,9 @@
       <div class="center">
         ¡Bienvenido a Kaluas Café!
       </div>
+      <div class="right">
+        <ons-toolbar-button style="background-color: white" icon="fa-user"></ons-toolbar-button>
+      </div>
     </ons-toolbar>
     <br/>
     <h3 style="margin:auto; text-align:center;">Menú del día de hoy</h3><br/>
@@ -337,6 +340,7 @@
       <p>
       <ons-input id="username" modifier="underbar" placeholder="Nombre: " float></ons-input><br/><br/>
       <ons-input id="username" modifier="underbar" placeholder="Descripción: " float></ons-input><br/><br/>
+      <ons-input id="username" modifier="underbar" placeholder="Precio: " float></ons-input><br/><br/>
       <ons-input type="file" id="username" modifier="underbar" placeholder="Seleccione una foto: " float></ons-input><br/><br/>
       </p>
 
@@ -349,7 +353,7 @@
   </ons-page>
 </template>
 
-<template id="alert-dialog.html">
+<template id="consultarproducto.html">
   <ons-alert-dialog id="my-alert-dialog" modifier="rowfooter">
     <div class="alert-dialog-title"> <b>Helado de Vainilla</b></div>
     <div class="alert-dialog-content">
@@ -362,11 +366,40 @@
     </div>
     <div class="alert-dialog-footer">
       <ons-alert-dialog-button style="background-color: lightblue" onclick="hideAlertDialog()">Cancelar</ons-alert-dialog-button>
-      <ons-alert-dialog-button style="background-color: lightgreen" onclick="hideAlertDialog()">Modificar</ons-alert-dialog-button>
-      <ons-alert-dialog-button style="background-color: lightcoral" onclick="hideAlertDialog()">Eliminar</ons-alert-dialog-button>
+      <ons-alert-dialog-button style="background-color: lightgreen" onclick="hideAlertDialog(); createAlertDialogModificar()">Modificar</ons-alert-dialog-button>
+      <ons-alert-dialog-button style="background-color: lightcoral" onclick="ons.notification.confirm('¿Está seguro que desea eliminar el producto?'); hideAlertDialog();">Eliminar</ons-alert-dialog-button>
     </div>
   </ons-alert-dialog>
 </template>
+
+<template id="modifproducto.html">
+  <ons-dialog id="modificar-producto" modifier="rowfooter" style="width: 100%; height: 100vh">
+    <div class="alert-dialog-title"> <b><br/> Modificar producto</b></div>
+    <div class="alert-dialog-content">
+      <ons-card>
+        <div style="text-align: center; opacity: 1; padding-top: 50px; ">
+          <i class="fa fa-birthday-cake "></i>  <i class="fa fa-coffee"></i>
+          <p>
+          <ons-input id="username" modifier="underbar" placeholder="Nombre:" value="Helado de vainilla" float></ons-input><br/><br/>
+          <ons-input id="username" modifier="underbar" placeholder="Descripción: " float></ons-input><br/><br/>
+          <ons-input id="username" modifier="underbar" placeholder="Precio: " float></ons-input><br/><br/>
+          <ons-input type="file" id="username" modifier="underbar" placeholder="Seleccione una foto: " float></ons-input><br/><br/>
+          </p>
+      </ons-card>
+    </div>
+    <ons-row>
+      <ons-col>
+        <ons-alert-dialog-button style="background-color: lightblue" onclick="hideAlertDialogModificar()">Cancelar</ons-alert-dialog-button>
+      </ons-col>
+      <ons-col>
+        <ons-alert-dialog-button style="background-color: lightgreen" onclick="hideAlertDialogModificar(); ons.notification.alert('Producto modificado con éxito.');">Modificar</ons-alert-dialog-button>
+      </ons-col>
+        
+    </ons-row>
+
+    </ons-dialog>
+</template>
+
 
 <template id="reservaciones.html">
   <ons-page>
@@ -402,10 +435,10 @@
                   <img class="list-item__thumbnail" src="https://placekitten.com/g/40/40">
                 </div>
                 <div class="center">
-                  gaboroa14 - 01:00 pm
+                  mariap - 01:00 pm
                 </div>
                 <div class="right">
-                  <section style="padding: 8px"><ons-button onclick="fn.load('modifreserv.html')" ><ons-icon icon="fa-search" size=15px></ons-icon>Consultar</ons-button>
+                  <section style="padding: 8px"><ons-button onclick="fn.load('consultarreserv1.html')" ><ons-icon icon="fa-search" size=15px></ons-icon>Consultar</ons-button>
                   <ons-button onclick="ons.notification.alert('Reservación finalizada');"><ons-icon icon="fa-check" size=15px></ons-icon>Finalizar</ons-button></section>
                 </div>
             </ons-list-item>
@@ -418,7 +451,7 @@
                   anyiv - 02:30 pm
                 </div>
                 <div class="right">
-                  <section style="padding: 8px"><ons-button><ons-icon icon="fa-search" size=15px></ons-icon>Consultar</ons-button>
+                  <section style="padding: 8px"><ons-button onclick="fn.load('consultarreserv2.html')"><ons-icon icon="fa-search" size=15px></ons-icon>Consultar</ons-button>
                   <ons-button  onclick="ons.notification.alert('Reservación finalizada');"><ons-icon icon="fa-check" size=15px></ons-icon>Finalizar</ons-button></section>
                 </div>
               <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
@@ -426,13 +459,13 @@
 
             <ons-list-item tappable>
                 <div class="left">
-                  <img class="list-item__thumbnail" src="https://placekitten.com/g/40/41">
+                  <img class="list-item__thumbnail" src="https://placekitten.com/g/42/41">
                 </div>
                 <div class="center">
-                  ajav06 - 07:00 pm
+                  ajav06 - 04:00 pm
                 </div>
                 <div class="right">
-                  <section style="padding: 8px"><ons-button><ons-icon icon="fa-search" size=15px></ons-icon>Consultar</ons-button>
+                  <section style="padding: 8px"><ons-button onclick="fn.load('consultarreserv3.html')"><ons-icon icon="fa-search" size=15px></ons-icon>Consultar</ons-button>
                   <ons-button  onclick="ons.notification.alert('Reservación finalizada');"><ons-icon icon="fa-check" size=15px></ons-icon>Finalizar</ons-button></section>
                 </div>
               <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
@@ -441,7 +474,7 @@
   </ons-page>
 </template>
 
-<template id="modifreserv.html">
+<template id="consultarreserv1.html">
   <ons-page>
     <ons-toolbar>
       <div class="left">
@@ -454,7 +487,86 @@
       </div>
       </ons-toolbar>
       <br/>
-        <h2 style="text-align: center">Reservación de gaboroa14 - Hora:1:00pm</h2>
+        <h2 style="text-align: center">Reservación de mariap - Hora:1:00pm</h2>
+          <ons-list style="width:70%; margin:auto;">
+            <ons-list-title>
+              <ons-row>
+                <ons-col width=80%>
+                  <div class="left">
+                    <b>Producto</b>
+                  </div>
+                </ons-col>
+                <ons-col width=20%>
+                  <div class="right">
+                    <b>Cantidad</b>
+                  </div>
+                </ons-col>
+              </ons-row>
+            </ons-list-title>
+
+            <ons-list-item tappable>
+                <div class="left">
+                  <img class="list-item__thumbnail" src="https://placekitten.com/g/42/40">
+                </div>
+                <div class="center">
+                  Torta de chocolate
+                </div>
+                <div class="right">
+                <ons-input type="text" placeholder="Cant" width=20% value="1">
+                </div>
+            </ons-list-item>
+
+            <ons-list-item tappable>
+                <div class="left">
+                  <img class="list-item__thumbnail" src="https://placekitten.com/g/41/40">
+                </div>
+                <div class="center">
+                  Volcán de chocolate
+                </div>
+                <div class="right">
+                <ons-input type="text" placeholder="Cant" width=20% value="1">
+                </div>
+            </ons-list-item>
+
+            <ons-list-item tappable>
+                <div class="left">
+                  <img class="list-item__thumbnail" src="https://placekitten.com/g/43/41">
+                </div>
+                <div class="center">
+                  Pie de Limón
+                </div>
+                <div class="right">
+                <ons-input type="text" placeholder="Cant" width=20% value="2">
+                </div>
+            </ons-list-item>
+
+            <ons-list-item tappable>
+              <span class="list-item__subtitle"><b>Nota: La reservación será válida solo durante una hora.</b></span>
+            </ons-list-item>
+          </ons-list>
+
+          <div style="margin:auto; text-align:center;">
+          <br/>
+          <ons-button style="background-color: lightcoral" onclick="fn.load('reservaciones.html');">Atrás</ons-button>
+            <ons-button style="background-color: lightgreen" onclick="ons.notification.alert('Reservación finalizada'); fn.load('reservaciones.html');">Finalizar</ons-button>
+          </div>
+  </ons-page>
+</template>
+
+<template id="consultarreserv2.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu" style="color:white"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        Reservaciones
+      </div>
+      </ons-toolbar>
+      <br/>
+        <h2 style="text-align: center">Reservación de anyiv - Hora:2:30pm</h2>
           <ons-list style="width:70%; margin:auto;">
             <ons-list-title>
               <ons-row>
@@ -488,7 +600,7 @@
                   <img class="list-item__thumbnail" src="https://placekitten.com/g/41/40">
                 </div>
                 <div class="center">
-                  Volcán de chocolate
+                  Torta Red Velvet
                 </div>
                 <div class="right">
                 <ons-input type="text" placeholder="Cant" width=20% value="1">
@@ -500,7 +612,86 @@
                   <img class="list-item__thumbnail" src="https://placekitten.com/g/40/41">
                 </div>
                 <div class="center">
-                  Pie de Limón
+                  Moccacinnoo
+                </div>
+                <div class="right">
+                <ons-input type="text" placeholder="Cant" width=20% value="2">
+                </div>
+            </ons-list-item>
+
+            <ons-list-item tappable>
+              <span class="list-item__subtitle"><b>Nota: La reservación será válida solo durante una hora.</b></span>
+            </ons-list-item>
+          </ons-list>
+
+          <div style="margin:auto; text-align:center;">
+          <br/>
+          <ons-button style="background-color: lightcoral" onclick="fn.load('reservaciones.html');">Atrás</ons-button>
+            <ons-button style="background-color: lightgreen" onclick="ons.notification.alert('Reservación finalizada'); fn.load('reservaciones.html');">Finalizar</ons-button>
+          </div>
+  </ons-page>
+</template>
+
+<template id="consultarreserv3.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu" style="color:white"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        Reservaciones
+      </div>
+      </ons-toolbar>
+      <br/>
+        <h2 style="text-align: center">Reservación de ajav06 - Hora:4:00pm</h2>
+          <ons-list style="width:70%; margin:auto;">
+            <ons-list-title>
+              <ons-row>
+                <ons-col width=80%>
+                  <div class="left">
+                    <b>Producto</b>
+                  </div>
+                </ons-col>
+                <ons-col width=20%>
+                  <div class="right">
+                    <b>Cantidad</b>
+                  </div>
+                </ons-col>
+              </ons-row>
+            </ons-list-title>
+
+            <ons-list-item tappable>
+                <div class="left">
+                  <img class="list-item__thumbnail" src="https://placekitten.com/g/43/40">
+                </div>
+                <div class="center">
+                  Torta de chocolate
+                </div>
+                <div class="right">
+                <ons-input type="text" placeholder="Cant" width=20% value="1">
+                </div>
+            </ons-list-item>
+
+            <ons-list-item tappable>
+                <div class="left">
+                  <img class="list-item__thumbnail" src="https://placekitten.com/g/44/40">
+                </div>
+                <div class="center">
+                  Galletas de chocolate
+                </div>
+                <div class="right">
+                <ons-input type="text" placeholder="Cant" width=20% value="5">
+                </div>
+            </ons-list-item>
+
+            <ons-list-item tappable>
+                <div class="left">
+                  <img class="list-item__thumbnail" src="https://placekitten.com/g/45/45">
+                </div>
+                <div class="center">
+                  Batido de almendras
                 </div>
                 <div class="right">
                 <ons-input type="text" placeholder="Cant" width=20% value="2">
@@ -560,13 +751,14 @@
       <ons-icon icon="fa-calendar-alt" size=50px></ons-icon>
       <p>
       <ons-input id="username" modifier="underbar" placeholder="Título o tema" float></ons-input><br/><br/>
-      <textarea class="textarea" rows="4" placeholder="Escribe la descripción aquí..."></textarea>
+      <textarea class="textarea" rows="4" placeholder="Escribe la descripción aquí..."></textarea><br/><br/>
+      <ons-input type="file" id="username" modifier="underbar" placeholder="Seleccione una foto: " float></ons-input><br/><br/>
       </p>
 
       <p>
-        <ons-button style="background-color: lightcoral" onclick="fn.load('productos.html')">Cancelar</ons-button>
+        <ons-button style="background-color: lightcoral" onclick="fn.load('promociones.html')">Cancelar</ons-button>
         <ons-button style="background-color: lightblue">Limpiar</ons-button>
-        <ons-button style="background-color: lightgreen" onclick="ons.notification.alert('Producto guardado con éxito.');">Incluir</ons-button>
+        <ons-button style="background-color: lightgreen" onclick="ons.notification.alert('Promoción incluida con éxito.');">Incluir</ons-button>
       </p>
     </div>
   </ons-page>
@@ -649,7 +841,7 @@ $(document).on('changestate', '#pull-hook', function(){
   if (dialog) {
     dialog.show();
   } else {
-    ons.createElement('alert-dialog.html', { append: true })
+    ons.createElement('consultarproducto.html', { append: true })
       .then(function(dialog) {
         dialog.show();
       });
@@ -661,5 +853,24 @@ var hideAlertDialog = function() {
     .getElementById('my-alert-dialog')
     .hide();
 };
+
+var createAlertDialogModificar = function() {
+  var dialog = document.getElementById('modificar-producto');
+
+  if (dialog) {
+    dialog.show();
+  } else {
+    ons.createElement('modifproducto.html', { append: true })
+      .then(function(dialog) {
+        dialog.show();
+      });
+  }
+};
+var hideAlertDialogModificar = function() {
+  document
+    .getElementById('modificar-producto')
+    .hide();
+};
+
 </script>
 </html>
