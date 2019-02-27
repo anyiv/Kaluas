@@ -56,7 +56,7 @@
       <div class="center">
         ¡Bienvenido a Kaluas Café!
       </div>
-      <div class="right">
+      <div class="right" style="padding-right: 10px">
         <ons-toolbar-button style="background-color: white" icon="fa-user"></ons-toolbar-button>
       </div>
     </ons-toolbar>
@@ -313,7 +313,7 @@
           <div class="left">
             <img src="https://placekitten.com/40/40">
           </div>
-          <div class="center">
+          <div class="center"  style="height: 100px">
             <span class="list-item__title">Vainilla</span><span class="list-item__subtitle">vainillita</span>
           </div>
         </ons-list-item>
@@ -728,15 +728,15 @@
       </div> </br>
       <ons-list style="width:70%; margin:auto;">
         <ons-list-title>
-          Día de la juventud / 12-02-2019
+          Día del amor y la amistad / 14-02-2019
         </ons-list-title>
   
-        <ons-list-item tappable>
+        <ons-list-item tappable onclick="createConsultarpromo();" style="height: 100px">
             <div class="left">
               <img class="list-item__thumbnail" src="https://placekitten.com/60/50">
             </div>
             <div class="center">
-              Dos por uno pa los jovenes :D
+              Dos por uno pa los cachos :D
             </div>
           <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
         </ons-list-item>
@@ -744,15 +744,15 @@
     </br>
       <ons-list style="width:70%; margin:auto;">
         <ons-list-title>
-          Día del amor y la amistad / 14-02-2019
+          Día de la juventud / 12-02-2019
         </ons-list-title>
   
-        <ons-list-item tappable>
+        <ons-list-item tappable  style="height: 100px">
             <div class="left">
               <img class="list-item__thumbnail" src="https://placekitten.com/60/60">
             </div>
             <div class="center">
-              Dos por uno pa los cachos :D
+              Dos por uno pa los jovenes :D
             </div>
           <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
         </ons-list-item>
@@ -762,6 +762,81 @@
         <ons-icon icon="md-plus" onclick="fn.load('registrarpromo.html')"></ons-icon>
       </ons-fab>
     </ons-page>
+</template>
+
+<template id="modifpromo.html">
+  <ons-dialog id="modificar-promo" modifier="rowfooter" style="width: 100%; height: 100vh">
+    <div class="alert-dialog-title"> <b><br/>Día del amor y la amistad </b></div>
+    <div class="alert-dialog-content">
+      <ons-card>
+      
+      </ons-card>
+    </div>
+    <ons-row>
+      <ons-col>
+        <ons-alert-dialog-button style="background-color: lightblue" onclick="hideConsultarpromo()">Cancelar</ons-alert-dialog-button>
+      </ons-col>
+      <ons-col>
+        <ons-alert-dialog-button style="background-color: lightgreen" onclick="hide.createConsultarpromo(); createModifpromo();">Modificar</ons-alert-dialog-button>
+      </ons-col>
+
+    </ons-row>
+
+    </ons-dialog>
+</template>
+
+<template id="consultarpromo.html">
+  <ons-dialog id="consultar-promo" modifier="rowfooter" style="width: 100%; height: 100vh">
+    <div class="alert-dialog-title"> <b><br/>Día del amor y la amistad </b></div>
+    <div class="alert-dialog-content">
+      <ons-card>
+        <div style="text-align: center; opacity: 1; padding-top: 20px; ">
+          <img src="https://placekitten.com/200/200" >
+          <p>
+          <textarea class="textarea" rows="4" placeholder="" >Dos por uno pa los cachos :D</textarea><br/><br/>
+          </p>
+      </ons-card>
+    </div>
+    <ons-row>
+      <ons-col>
+        <ons-alert-dialog-button style="background-color: lightblue" onclick="hideConsultarpromo()">Cancelar</ons-alert-dialog-button>
+      </ons-col>
+      <ons-col>
+        <ons-alert-dialog-button style="background-color: lightgreen" onclick="hide.createConsultarpromo()">Modificar</ons-alert-dialog-button>
+      </ons-col>
+      <ons-col>
+        <ons-alert-dialog-button style="background-color: lightcoral" onclick="hideConsultarpromo(); ons.notification.confirm('¿Está seguro que deses eliminar la promoción?');">Eliminar</ons-alert-dialog-button>
+      </ons-col>
+    </ons-row>
+
+    </ons-dialog>
+</template>
+
+<template id="modificarpromo.html">
+  <ons-dialog id="consultar-promo" modifier="rowfooter" style="width: 100%; height: 100vh">
+    <div class="alert-dialog-title"> <b><br/>Día del amor y la amistad </b></div>
+    <div class="alert-dialog-content">
+      <ons-card>
+        <p>
+          <ons-input id="username" modifier="underbar" placeholder="Título o tema" float></ons-input><br/><br/>
+          <textarea class="textarea" rows="4" placeholder="Escribe la descripción aquí..."></textarea><br/><br/>
+          <ons-input type="file" id="username" modifier="underbar" placeholder="Seleccione una foto: " float></ons-input><br/><br/>
+          </p>
+      </ons-card>
+    </div>
+    <ons-row>
+      <ons-col>
+        <ons-alert-dialog-button style="background-color: lightblue" onclick="hideConsultarpromo()">Cancelar</ons-alert-dialog-button>
+      </ons-col>
+      <ons-col>
+        <ons-alert-dialog-button style="background-color: lightgreen" onclick="hide.createConsultarpromo()">Modificar</ons-alert-dialog-button>
+      </ons-col>
+      <ons-col>
+        <ons-alert-dialog-button style="background-color: lightcoral" onclick="hideConsultarpromo(); ons.notification.confirm('¿Está seguro que deses eliminar la promoción?');">Eliminar</ons-alert-dialog-button>
+      </ons-col>
+    </ons-row>
+
+    </ons-dialog>
 </template>
 
 <template id="registrarpromo.html">
@@ -899,6 +974,44 @@ var createAlertDialogModificar = function() {
 var hideAlertDialogModificar = function() {
   document
     .getElementById('modificar-producto')
+    .hide();
+};
+
+var createConsultarpromo = function() {
+  var dialog = document.getElementById('consultar-promo');
+
+  if (dialog) {
+    dialog.show();
+  } else {
+    ons.createElement('consultarpromo.html', { append: true })
+      .then(function(dialog) {
+        dialog.show();
+      });
+  }
+};
+
+var hideConsultarpromo = function() {
+  document
+    .getElementById('consultar-promo')
+    .hide();
+};
+
+var createModifpromo = function() {
+  var dialog = document.getElementById('modificar-promo');
+
+  if (dialog) {
+    dialog.show();
+  } else {
+    ons.createElement('modificarpromo.html', { append: true })
+      .then(function(dialog) {
+        dialog.show();
+      });
+  }
+};
+
+var hideModificarpromo = function() {
+  document
+    .getElementById('consultar-promo')
     .hide();
 };
 
