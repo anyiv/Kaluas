@@ -21,9 +21,18 @@
           <div class="left"><ons-icon icon="fa-mug-hot" size=15px></ons-icon></div>
             Productos
           </ons-list-item>
-        <ons-list-item onclick="fn.load('reservaciones.html')" tappable>
+
+        <ons-list-item tappable expandable>
           <div class="left"><ons-icon icon="fa-utensils" size=15px></ons-icon> </div>
           Reservaciones
+          <div class="expandable-content">
+          <ons-list-item onclick="fn.load('modificarreservacion.html')" tappable>
+            Consultar
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('reservaciones.html')" tappable>
+            Crear Reservación
+          </ons-list-item>
+          </div>
         </ons-list-item>
         <ons-list-item onclick="fn.load('promociones.html')" tappable>
           <div class="left"><ons-icon icon="fa-gifts" size=15px></ons-icon> </div>
@@ -77,12 +86,24 @@
         </ons-toolbar-button>
       </div>
       <div class="center">
-        ¡Bienvenido a Kaluas Café!
+        Kalua's Café
       </div>
       <div class="right"  style="padding-right: 10px">
-        <ons-toolbar-button style="background-color: white" icon="fa-user"></ons-toolbar-button>
+        <i style="padding-right: 10px">Leota</i><ons-toolbar-button style="background-color: white" icon="fa-user" onclick="document.getElementById('popover').show(this);"></ons-toolbar-button>
       </div>
     </ons-toolbar>
+
+    <ons-popover direction="down" id="popover">
+      <div style="padding: 10px; text-align: center;">
+        <p>
+          <b>Usuario:</b> Leota<br/>
+          <b>Últ. conexión:</b> Ayer, 10:00 a.m.<br/>
+        </p>
+        <p>
+          <ons-button onclick="document.getElementById('popover').hide()">Cerrar</ons-button>
+        </p>
+      </div>
+    </ons-popover>
 
     <br/><h3 style="margin:auto; text-align:center;">Menú del día de hoy</h3><br/>
       <ons-list style="width:70%; margin:auto;">
@@ -140,8 +161,8 @@
 
 <template id="productos.html">
     <ons-page>
-        <ons-pull-hook id="pull-hook">
-            Pull to refresh
+        <ons-pull-hook id="pull-hook" style="background:#ACECA1;">
+            <i>Suelta para actualizar</i>
           </ons-pull-hook>
       <ons-toolbar>
         <div class="left">
@@ -285,7 +306,7 @@
       </div>
       </ons-toolbar>
       <br/>
-        <h2 style="text-align: center">¡Haz tu reservación!</h2>
+        <h2 style="text-align: center">Consultar reservación</h2>
           <ons-list style="width:70%; margin:auto;">
             <ons-list-title>
               <ons-row>
@@ -345,7 +366,8 @@
 
           <div style="margin:auto; text-align:center;">
           <br/>
-            <ons-input type="text" placeholder="Hora:" modifier="underbar" required value="01:00 p.m."></ons-input><br/><br/>
+            <ons-input type="text" placeholder="Hora:" modifier="underbar" required value="Hora: 01:00 p.m."></ons-input><br/><br/>
+            <ons-input type="text" placeholder="Precio:" modifier="underbar" required value="Total a pagar: 3.400 Bs"></ons-input><br/><br/>
             <ons-button style="background-color: lightgreen" onclick="ons.notification.alert('Reservación modificada con éxito.'); fn.load('home.html');">Modificar</ons-button>
             <ons-button style="background-color: lightcoral" onclick="ons.notification.alert('Reservación cancelada con éxito.'); fn.load('home.html');">Cancelar</ons-button>
           </div>
@@ -364,12 +386,62 @@
           Kalua's Café
         </div>
       </ons-toolbar>
-      <h2 style="text-align:center">Eventos y promociones.</h2>
-      <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-          Lleva 2 por una :D<br/>
-          Te llevamos el producto hasta tu casa!<br/>
-      </p>
+      <h2 style="text-align: center" >Eventos y promociones.</h2>
+      <div style="text-align: center; opacity: 1; padding-top: 10px;">
+        <ons-icon icon="fa-calendar-check" size=50px></ons-icon>
+      </div> </br>
+      <ons-list style="width:70%; margin:auto;">
+        <ons-list-title>
+          Día del amor y la amistad / 14-02-2019
+        </ons-list-title>
+  
+        <ons-list-item tappable onclick="createConsultarpromo();" style="height: 100px">
+            <div class="left">
+              <img class="list-item__thumbnail" src="https://placekitten.com/60/50">
+            </div>
+            <div class="center">
+              Dos por uno pa los cachos :D
+            </div>
+        </ons-list-item>
+      </ons-list>
+    </br>
+      <ons-list style="width:70%; margin:auto;">
+        <ons-list-title>
+          Día de la juventud / 12-02-2019
+        </ons-list-title>
+  
+        <ons-list-item tappable  style="height: 100px">
+            <div class="left">
+              <img class="list-item__thumbnail" src="https://placekitten.com/60/60">
+            </div>
+            <div class="center">
+              Dos por uno pa los jovenes :D
+            </div>
+          <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
+        </ons-list-item>
+      </ons-list>
     </ons-page>
+</template>
+
+<template id="consultarpromo.html">
+  <ons-dialog id="consultar-promo" modifier="rowfooter" style="width: 100%; height: 100vh">
+    <div class="alert-dialog-title"> <b><br/>Día del amor y la amistad </b></div>
+    <div class="alert-dialog-content">
+      <ons-card>
+        <div style="text-align: center; opacity: 1; padding-top: 20px; ">
+          <img src="https://placekitten.com/200/200" >
+          <p>
+          <textarea class="textarea" rows="4" placeholder="" >Dos por uno pa los cachos :D</textarea><br/><br/>
+          </p>
+      </ons-card>
+    </div>
+    <ons-row>
+      <ons-col>
+        <ons-alert-dialog-button style="background-color: lightblue" onclick="hideConsultarpromo()">Cerrar</ons-alert-dialog-button>
+      </ons-col>
+    </ons-row>
+
+    </ons-dialog>
 </template>
 
 <template id="opinion.html">
@@ -431,13 +503,13 @@ $(document).on('changestate', '#pull-hook', function(){
 
     switch (event.state) {
       case 'initial':
-        message = 'Pull to refresh';
+        message = '<i>Suelta para actualizar</i>';
         break;
       case 'preaction':
-        message = 'Release';
+        message = '<i>Suelta</i>';
         break;
       case 'action':
-        message = 'Loading...';
+        message = '<b>Actualizando...</b>';
         break;
     }
 
@@ -486,5 +558,23 @@ var hideAlertDialog = function() {
     .hide();
 };
 
+var createConsultarpromo = function() {
+  var dialog = document.getElementById('consultar-promo');
+
+  if (dialog) {
+    dialog.show();
+  } else {
+    ons.createElement('consultarpromo.html', { append: true })
+      .then(function(dialog) {
+        dialog.show();
+      });
+  }
+};
+
+var hideConsultarpromo = function() {
+  document
+    .getElementById('consultar-promo')
+    .hide();
+};
 </script>
 </html>

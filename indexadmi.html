@@ -44,8 +44,8 @@
 
 <template id="home.html">
   <ons-page>
-      <ons-pull-hook id="pull-hook">
-        Pull to refresh
+      <ons-pull-hook id="pull-hook" style="background:#ACECA1;">
+        <i>Suelta para actualizar</i>
       </ons-pull-hook>
    <ons-toolbar>
       <div class="left">
@@ -54,10 +54,10 @@
         </ons-toolbar-button>
       </div>
       <div class="center">
-        ¡Bienvenido a Kaluas Café!
+        Kalua's Café
       </div>
       <div class="right" style="padding-right: 10px">
-        <ons-toolbar-button style="background-color: white" icon="fa-user"></ons-toolbar-button>
+        <i style="padding-right: 10px">Anyi</i><ons-toolbar-button style="background-color: white" icon="fa-user" onclick="document.getElementById('popover').show(this);"></ons-toolbar-button>
       </div>
     </ons-toolbar>
     <br/>
@@ -121,6 +121,18 @@
     </ons-speed-dial>
     </ons-page>
 </template>
+
+<ons-popover direction="down" id="popover">
+  <div style="padding: 10px; text-align: center;">
+    <p>
+      <b>Usuario:</b> Anyi<br/>
+      <b>Últ. conexión:</b> Ayer, 02:37 p.m.<br/>
+    </p>
+    <p>
+      <ons-button onclick="document.getElementById('popover').hide()">Cerrar</ons-button>
+    </p>
+  </div>
+</ons-popover>
 
 <template id="modificarmenu.html">
   <ons-page>
@@ -288,8 +300,8 @@
 
 <template id="productos.html">
     <ons-page>
-        <ons-pull-hook id="pull-hook">
-            Pull to refresh
+        <ons-pull-hook id="pull-hook" style="background:#ACECA1;">
+            <i>Suelta para actualizar</i>
           </ons-pull-hook>
       <ons-toolbar>
         <div class="left">
@@ -882,16 +894,15 @@ $(document).on('changestate', '#pull-hook', function(){
 
     switch (event.state) {
       case 'initial':
-        message = 'Pull to refresh';
+        message = '<i>Suelta para actualizar</i>';
         break;
       case 'preaction':
-        message = 'Release';
+        message = '<i>Suelta</i>';
         break;
       case 'action':
-        message = 'Loading...';
+        message = '<b>Actualizando...</b>';
         break;
     }
-
     pullHook.innerHTML = message;
 });
 
