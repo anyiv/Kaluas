@@ -7,22 +7,22 @@
 <link rel="stylesheet" href="onsen-css-components.min.css">
 
 <head>
-<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" sizes="57x57" href="ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
+<link rel="manifest" href="ico/manifest.json">
 <meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="msapplication-TileImage" content="ico/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 <title>Kalua's Café Web App</title>
 </head>
@@ -831,7 +831,7 @@
 
 <template id="modifpromo.html">
   <ons-dialog id="modificar-promo" modifier="rowfooter" style="width: 100%; height: 100vh">
-    <div class="alert-dialog-title"> <b><br/>Modificar promoción </b></div>
+    <div class="alert-dialog-title"> <b><br/>Día del amor y la amistad </b></div>
     <div class="alert-dialog-content">
       <ons-card>
           <div style="text-align: center; opacity: 1; padding-top: 10px;">
@@ -846,13 +846,14 @@
     </div>
     <ons-row>
       <ons-col>
-        <ons-alert-dialog-button style="background-color: lightblue" onclick="hideModificarpromo()">Cancelar</ons-alert-dialog-button>
+        <ons-alert-dialog-button style="background-color: lightblue" onclick="hideConsultarpromo()">Cancelar</ons-alert-dialog-button>
       </ons-col>
       <ons-col>
-        <ons-alert-dialog-button style="background-color: lightgreen" onclick="hideModificarpromo(); ons.notification.alert('La promoción ha sido modificada con exito.');">Modificar</ons-alert-dialog-button>
+        <ons-alert-dialog-button style="background-color: lightgreen" onclick="hide.createConsultarpromo(); createModifpromo();">Modificar</ons-alert-dialog-button>
       </ons-col>
 
     </ons-row>
+
     </ons-dialog>
 </template>
 
@@ -873,7 +874,7 @@
         <ons-alert-dialog-button style="background-color: lightblue" onclick="hideConsultarpromo()">Cancelar</ons-alert-dialog-button>
       </ons-col>
       <ons-col>
-        <ons-alert-dialog-button style="background-color: lightgreen" onclick=" createModifpromo(); hideConsultarpromo(); ">Modificar</ons-alert-dialog-button>
+        <ons-alert-dialog-button style="background-color: lightgreen" onclick="hide.createConsultarpromo()">Modificar</ons-alert-dialog-button>
       </ons-col>
       <ons-col>
         <ons-alert-dialog-button style="background-color: lightcoral" onclick="hideConsultarpromo(); ons.notification.confirm('¿Está seguro que deses eliminar la promoción?');">Eliminar</ons-alert-dialog-button>
@@ -883,6 +884,32 @@
     </ons-dialog>
 </template>
 
+<template id="modificarpromo.html">
+  <ons-dialog id="consultar-promo" modifier="rowfooter" style="width: 100%; height: 100vh">
+    <div class="alert-dialog-title"> <b><br/>Día del amor y la amistad </b></div>
+    <div class="alert-dialog-content">
+      <ons-card>
+        <p>
+          <ons-input id="username" modifier="underbar" placeholder="Título o tema" float></ons-input><br/><br/>
+          <textarea class="textarea" rows="4" placeholder="Escribe la descripción aquí..."></textarea><br/><br/>
+          <ons-input type="file" id="username" modifier="underbar" placeholder="Seleccione una foto: " float></ons-input><br/><br/>
+          </p>
+      </ons-card>
+    </div>
+    <ons-row>
+      <ons-col>
+        <ons-alert-dialog-button style="background-color: lightblue" onclick="hideConsultarpromo()">Cancelar</ons-alert-dialog-button>
+      </ons-col>
+      <ons-col>
+        <ons-alert-dialog-button style="background-color: lightgreen" onclick="hide.createConsultarpromo()">Modificar</ons-alert-dialog-button>
+      </ons-col>
+      <ons-col>
+        <ons-alert-dialog-button style="background-color: lightcoral" onclick="hideConsultarpromo(); ons.notification.confirm('¿Está seguro que deses eliminar la promoción?');">Eliminar</ons-alert-dialog-button>
+      </ons-col>
+    </ons-row>
+
+    </ons-dialog>
+</template>
 
 <template id="registrarpromo.html">
   <ons-page>
@@ -948,7 +975,7 @@
           <img src="https://placekitten.com/40/40">
         </div>
         <div class="center"  style="height: 100px">
-          <span class="list-item__title"><b>Tema:</b> ¡Excelente servicio!</span><span class="list-item__subtitle">Me parece que brindan un excelente servicio, me encantan sus cafés, son demasiado ricos, sigan así!</span>
+          <span class="list-item__title"><b>Tema:</b> ¡Excelente servicio!</span><span class="list-item__subtitle">Me parece que brindan un excelente servicio, me encantan sus cafés, son demasiado ricos, sigan así!<br/><i>Correo de contacto:</i> mariap_42@gmail.com</span>
         </div>
       </ons-list-item>
   </ons-page>
@@ -1057,7 +1084,7 @@ var createModifpromo = function() {
   if (dialog) {
     dialog.show();
   } else {
-    ons.createElement('modifpromo.html', { append: true })
+    ons.createElement('modificarpromo.html', { append: true })
       .then(function(dialog) {
         dialog.show();
       });
@@ -1066,7 +1093,7 @@ var createModifpromo = function() {
 
 var hideModificarpromo = function() {
   document
-    .getElementById('modificar-promo')
+    .getElementById('consultar-promo')
     .hide();
 };
 
