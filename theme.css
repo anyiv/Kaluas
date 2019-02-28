@@ -1,11 +1,13 @@
 /* Custom Theme for Onsen UI 2.10.6 */
 
+/* Custom Theme for Onsen UI 2.10.6 */
+
 
 :root {
   /* variables for iOS components */
   --background-color: #C9F2C7;
   --text-color: #1f1f21;
-  --sub-text-color: #999;
+  --sub-text-color: rgba(135,132,132,1);
   --highlight-color: #554348;
   --second-highlight-color: rgba(85,67,72,0.87);
   --border-color: rgba(170,167,167,0.83);
@@ -87,52 +89,52 @@
   --material-range-disabled-thumb-color: #b0b0b0;
   --material-range-disabled-thumb-border-color: #eeeeee;
   --material-range-zero-thumb-color: #f2f2f2;
-  --material-toolbar-background-color: #FFFFFF;
-  --material-toolbar-text-color: rgba(66,66,81,1);
+  --material-toolbar-background-color: #554348;
+  --material-toolbar-text-color: rgba(255,255,255,1);
   --material-toolbar-button-color: #554348;
-  --material-segment-background-color: #fafafa;
-  --material-segment-active-background-color: #c8c8c8;
+  --material-segment-background-color: rgba(255,255,255,1);
+  --material-segment-active-background-color: #554348;
   --material-segment-text-color: color(black a(38%));
-  --material-segment-active-text-color: #353535;
+  --material-segment-active-text-color: rgba(255,250,251,1);
   --material-button-background-color: #554348;
   --material-button-text-color: #ffffff;
   --material-button-disabled-background-color: color(#4f4f4f a(26%));
   --material-button-disabled-color: color(black a(26%));
   --material-flat-button-active-background-color: color(#999 a(20%));
-  --material-list-background-color: #fff;
+  --material-list-background-color: #ACECA1;
   --material-list-item-separator-color: #eee;
-  --material-list-header-text-color: #757575;
+  --material-list-header-text-color: #629460;
   --material-checkbox-active-color: #37474f;
   --material-checkbox-inactive-color: #717171;
   --material-checkbox-checkmark-color: #ffffff;
-  --material-radio-button-active-color: #37474f;
+  --material-radio-button-active-color: #554348;
   --material-radio-button-inactive-color: #717171;
-  --material-radio-button-disabled-color: #afafaf;
+  --material-radio-button-disabled-color: #554348;
   --material-text-input-text-color: #212121;
-  --material-text-input-active-color: #3d5afe;
-  --material-text-input-inactive-color: #afafaf;
-  --material-search-background-color: #fafafa;
-  --material-dialog-background-color: #ffffff;
+  --material-text-input-active-color: rgba(0,0,0,1);
+  --material-text-input-inactive-color: rgba(152,146,146,1);
+  --material-search-background-color: rgba(3,2,2,0.09);
+  --material-dialog-background-color: #F4F4F4;
   --material-dialog-text-color: var(--material-text-color);
-  --material-alert-dialog-background-color: #ffffff;
+  --material-alert-dialog-background-color: #EEEEEE;
   --material-alert-dialog-title-color: #31313a;
   --material-alert-dialog-content-color: rgba(49, 49, 58, 0.85);
   --material-alert-dialog-button-color: #37474f;
   --material-progress-bar-primary-color: #37474f;
   --material-progress-bar-secondary-color: #548ba7;
   --material-progress-bar-background-color: transparent;
-  --material-progress-circle-primary-color: var(--material-progress-bar-primary-color);
+  --material-progress-circle-primary-color: #554348;
   --material-progress-circle-secondary-color: var(--material-progress-bar-secondary-color);
   --material-progress-circle-background-color: transparent;
   --material-tabbar-background-color: #ffffff;
-  --material-tabbar-text-color: #31313a;
-  --material-tabbar-highlight-text-color: #31313a;
+  --material-tabbar-text-color: #999999;
+  --material-tabbar-highlight-text-color: #554348;
   --material-tabbar-highlight-color: rgba(49, 49, 58, 0.1);
-  --material-fab-text-color: #31313a;
-  --material-fab-background-color: #ffffff;
-  --material-fab-active-background-color: rgba(255, 255, 255, 0.75);
+  --material-fab-text-color: rgba(255,255,255,1);
+  --material-fab-background-color: #554348;
+  --material-fab-active-background-color: rgba(85,67,72,0.7);
   --material-card-background-color: white;
-  --material-card-text-color: rgba(0, 0, 0, 0.54);
+  --material-card-text-color: rgba(22,0,0,1);
   --material-toast-background-color: rgba(0, 0, 0, 0.8);
   --material-toast-text-color: white;
   --material-toast-button-text-color: #bbdefb;
