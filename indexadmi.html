@@ -479,7 +479,7 @@
 </template>
 
 <template id="consultarproducto.html">
-  <ons-alert-dialog id="my-alert-dialog" modifier="rowfooter">
+  <ons-dialog id="my-alert-dialog" modifier="rowfooter">
     <div class="alert-dialog-title"> <b>Café Moccacinno</b></div>
     <div class="alert-dialog-content">
       <ons-card>
@@ -492,11 +492,20 @@
       </ons-card>
     </div>
     <div class="alert-dialog-footer">
-      <ons-alert-dialog-button style="background-color: lightblue" onclick="hideAlertDialog()">Cancelar</ons-alert-dialog-button>
-      <ons-alert-dialog-button style="background-color: lightgreen" onclick="hideAlertDialog(); createAlertDialogModificar()">Modificar</ons-alert-dialog-button>
-      <ons-alert-dialog-button style="background-color: lightcoral" onclick="ons.notification.confirm('¿Está seguro que desea eliminar el producto?'); hideAlertDialog();">Eliminar</ons-alert-dialog-button>
+        <ons-row>
+            <ons-col>
+                <ons-alert-dialog-button style="background-color: lightblue" onclick="hideAlertDialog()">Cancelar</ons-alert-dialog-button>
+            </ons-col>
+            <ons-col>
+                <ons-alert-dialog-button style="background-color: lightgreen" onclick="hideAlertDialog(); createAlertDialogModificar()">Modificar</ons-alert-dialog-button>
+            </ons-col>
+            <ons-col>
+                <ons-alert-dialog-button style="background-color: lightcoral" onclick="ons.notification.confirm('¿Está seguro que desea eliminar el producto?'); hideAlertDialog();">Eliminar</ons-alert-dialog-button>
+            </ons-col>
+          </ons-row>
+     
     </div>
-  </ons-alert-dialog>
+  </ons-dialog>
 </template>
 
 <template id="modifproducto.html">
