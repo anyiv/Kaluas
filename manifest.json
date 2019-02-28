@@ -45,5 +45,5 @@
  "scope": "/",
  "start_url": "/index.html",
  "display": "fullscreen",
- "orientation": "portrait",
+ "orientation": "portrait"
 }
