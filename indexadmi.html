@@ -5,7 +5,28 @@
 <link rel="stylesheet" href="theme.css">
 <link rel="stylesheet" href="onsen-css-components.css">
 <link rel="stylesheet" href="onsen-css-components.min.css">
-<head><title>Kaluas Cafe Web App</title></head>
+
+<head>
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<title>Kalua's Café Web App</title>
+</head>
+
 <body>
 <ons-splitter>
   <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
@@ -143,11 +164,14 @@
         </ons-toolbar-button>
       </div>
       <div class="center">
-        Crear menú del día
+        Kalua's Café
+      </div>
+      <div class="right" style="padding-right: 10px">
+        <i style="padding-right: 10px">Anyi</i><ons-toolbar-button style="background-color: white" icon="fa-user" onclick="document.getElementById('popover').show(this);"></ons-toolbar-button>
       </div>
     </ons-toolbar>
-    <br/><br/><br/>
-
+    <br/>
+    <h2 style="margin:auto; text-align:center;">Modificar menú del día</h2><br/>
     <ons-list style="width:70%; margin:auto;">
       <ons-list-title>
         <ons-row>
@@ -225,10 +249,15 @@
         </ons-toolbar-button>
       </div>
       <div class="center">
-        Crear menú del día
+        Kalua's Café
+      </div>
+      <div class="right" style="padding-right: 10px">
+        <i style="padding-right: 10px">Anyi</i><ons-toolbar-button style="background-color: white" icon="fa-user" onclick="document.getElementById('popover').show(this);"></ons-toolbar-button>
       </div>
     </ons-toolbar>
     <br/><br/><br/>
+
+    <h2 style="text-align:center;">Crear menú del día</h2>
 
     <ons-list style="width:70%; margin:auto;">
       <ons-list-title>
@@ -312,6 +341,9 @@
         <div class="center">
           Kalua's Café
         </div>
+        <div class="right" style="padding-right: 10px">
+          <i style="padding-right: 10px">Anyi</i><ons-toolbar-button style="background-color: white" icon="fa-user" onclick="document.getElementById('popover').show(this);"></ons-toolbar-button>
+        </div>
         </ons-toolbar>
         <h2 style="text-align: center">Productos ofrecidos</h2>
         <p style="text-align: center; margin-top: 10px;">
@@ -344,9 +376,13 @@
         </ons-toolbar-button>
       </div>
       <div class="center">
-        Incluir Producto
+        Kalua's Café
+      </div>
+      <div class="right" style="padding-right: 10px">
+        <i style="padding-right: 10px">Anyi</i><ons-toolbar-button style="background-color: white" icon="fa-user" onclick="document.getElementById('popover').show(this);"></ons-toolbar-button>
       </div>
     </ons-toolbar>
+    <h2 style="text-align:center;">Incluir producto</h2>
     <div style="text-align: center; opacity: 1; padding-top: 20px;">
       <ons-icon icon="fa-birthday-cake" size=40px></ons-icon> <ons-icon icon="fa-coffee" size=40px></ons-icon>
       <p>
@@ -423,6 +459,9 @@
       <div class="center">
         Kalua's Café
       </div>
+      <div class="right" style="padding-right: 10px">
+        <i style="padding-right: 10px">Anyi</i><ons-toolbar-button style="background-color: white" icon="fa-user" onclick="document.getElementById('popover').show(this);"></ons-toolbar-button>
+      </div>
     </ons-toolbar><br/>
     <h2 style="text-align: center">Reservaciones realizadas.</h2> <br/>
           <ons-list style="width:70%; margin:auto;">
@@ -494,7 +533,10 @@
         </ons-toolbar-button>
       </div>
       <div class="center">
-        Reservaciones
+        Kalua's Café
+      </div>
+      <div class="right" style="padding-right: 10px">
+        <i style="padding-right: 10px">Anyi</i><ons-toolbar-button style="background-color: white" icon="fa-user" onclick="document.getElementById('popover').show(this);"></ons-toolbar-button>
       </div>
       </ons-toolbar>
       <br/>
@@ -573,7 +615,10 @@
         </ons-toolbar-button>
       </div>
       <div class="center">
-        Reservaciones
+        Kalua's Café
+      </div>
+      <div class="right" style="padding-right: 10px">
+        <i style="padding-right: 10px">Anyi</i><ons-toolbar-button style="background-color: white" icon="fa-user" onclick="document.getElementById('popover').show(this);"></ons-toolbar-button>
       </div>
       </ons-toolbar>
       <br/>
@@ -652,7 +697,10 @@
         </ons-toolbar-button>
       </div>
       <div class="center">
-        Reservaciones
+        Kalua's Café
+      </div>
+      <div class="right" style="padding-right: 10px">
+        <i style="padding-right: 10px">Anyi</i><ons-toolbar-button style="background-color: white" icon="fa-user" onclick="document.getElementById('popover').show(this);"></ons-toolbar-button>
       </div>
       </ons-toolbar>
       <br/>
@@ -732,6 +780,9 @@
         </div>
         <div class="center">
           Kalua's Café
+        </div>
+        <div class="right" style="padding-right: 10px">
+          <i style="padding-right: 10px">Anyi</i><ons-toolbar-button style="background-color: white" icon="fa-user" onclick="document.getElementById('popover').show(this);"></ons-toolbar-button>
         </div>
       </ons-toolbar>
       <h2 style="text-align: center" >Eventos y promociones.</h2>
@@ -842,6 +893,9 @@
       <div class="center">
         Kalua's Café
       </div>
+      <div class="right" style="padding-right: 10px">
+        <i style="padding-right: 10px">Anyi</i><ons-toolbar-button style="background-color: white" icon="fa-user" onclick="document.getElementById('popover').show(this);"></ons-toolbar-button>
+      </div>
     </ons-toolbar>
     <h2 style="text-align: center">Resgistra eventos y promociones.</h2>
     <div style="text-align: center; opacity: 1; padding-top: 20px;">
@@ -863,6 +917,9 @@
 
 <template id="opinion.html">
   <ons-page>
+      <ons-pull-hook id="pull-hook" style="background:#ACECA1;">
+          <i>Suelta para actualizar</i>
+        </ons-pull-hook>
     <ons-toolbar>
       <div class="left">
         <ons-toolbar-button onclick="fn.open()">
@@ -872,21 +929,26 @@
       <div class="center">
         Kalua's Café
       </div>
-    </ons-toolbar>
-    <h2 style="text-align:center">Reporte de Opiniones.</h2>
-    <div style="text-align: center; opacity: 1; padding-top: 20px;">
-      <i class="fa fa-comments"></i>
-      <p>
-      <ons-input id="username" modifier="underbar" placeholder="Correo electrónico:" float></ons-input><br/><br/>
-      <ons-input id="username" modifier="underbar" placeholder="Tema:" float></ons-input><br/><br/>
-      <textarea class="textarea" rows="4" placeholder="Tu opinión aquí..."></textarea>
+      <div class="right" style="padding-right: 10px">
+        <i style="padding-right: 10px">Anyi</i><ons-toolbar-button style="background-color: white" icon="fa-user" onclick="document.getElementById('popover').show(this);"></ons-toolbar-button>
+      </div>
+      </ons-toolbar>
+      <h2 style="text-align: center">Reporte de opiniones</h2>
+      <p style="text-align: center; margin-top: 10px;">
+        <ons-search-input
+          placeholder="Buscar usuario"
+          onchange="ons.notification.alert('Searched for: ' + this.value)"
+        ></ons-search-input>
       </p>
-
-      <p>
-        <ons-button style="background-color: lightgreen" onclick="document.getElementById('my-dialog').hide();">Enviar</ons-button>
-        <ons-button style="background-color: lightcoral" onclick="document.getElementById('my-dialog').hide();">Cancelar</ons-button>
-      </p>
-    </div>
+      <ons-list-header><b>mariap - 24/02/2019</b></ons-list-header>
+      <ons-list-item tappable style="height: 100px">
+        <div class="left">
+          <img src="https://placekitten.com/40/40">
+        </div>
+        <div class="center"  style="height: 100px">
+          <span class="list-item__title"><b>Tema:</b> ¡Excelente servicio!</span><span class="list-item__subtitle">Me parece que brindan un excelente servicio, me encantan sus cafés, son demasiado ricos, sigan así!</span>
+        </div>
+      </ons-list-item>
   </ons-page>
 </template>
 
