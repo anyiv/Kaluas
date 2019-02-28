@@ -42,8 +42,7 @@
    "density": "4.0"
   }
  ],
- "scope": "/",
  "start_url": "/index.html",
- "display": "fullscreen",
+ "display": "standalone",
  "orientation": "portrait"
 }
