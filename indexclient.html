@@ -149,7 +149,6 @@
             <div class="center">
               Café Moccacinno
             </div>
-          <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
         </ons-list-item>
   
         <ons-list-item tappable style="height: 100px">
@@ -168,7 +167,6 @@
             <div class="center">
               Torta de Oreo
             </div>
-          <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
         </ons-list-item>
 
         <ons-list-item tappable style="height: 100px">
@@ -178,7 +176,15 @@
             <div class="center">
               Café con leche
             </div>
-          <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
+        </ons-list-item>
+
+        <ons-list-item tappable style="height: 100px">
+            <div class="left">
+              <img class="list-item__thumbnail" src="productos/3CFresa.jpg"  style="width: 80px; height: 80px">
+            </div>
+            <div class="center">
+             Cheesecake de fresa
+            </div>
         </ons-list-item>
       </ons-list>
     <ons-fab position="bottom right" onclick="document.getElementById('my-dialog').show();">
@@ -482,18 +488,19 @@
         <ons-icon icon="fa-calendar-check" size=50px></ons-icon>
       </div> </br>
       <ons-list style="width:70%; margin:auto;">
-        <ons-list-title>
-          Día del amor y la amistad / 14-02-2019
-        </ons-list-title>
-  
-        <ons-list-item tappable onclick="createConsultarpromo();" style="height: 100px">
-            <div class="left">
-              <img class="list-item__thumbnail" src="https://placekitten.com/60/50">
-            </div>
-            <div class="center">
-              Dos por uno pa los cachos :D
-            </div>
-        </ons-list-item>
+          <ons-list-title>
+              Día del amor y la amistad / 14-02-2019
+            </ons-list-title>
+      
+            <ons-list-item tappable onclick="createConsultarpromo();" style="height: 100px">
+                <div class="left">
+                  <img class="list-item__thumbnail" src="productos/17 Promo San Valentin.jpg" style=" width: 80px; height: 80px;">
+                </div>
+                <div class="center">
+                    ¡En Kalua's Café pensamos para ti este 14 de febrero! Así que ven y disfruta con nosotros de esta excelente promoción donde te ofrecemos un 2x1 en Cheesecake de Fresa, además de un 20% de descuento en cualquier café de tu elección si vas acompañado de tu pareja.
+                </div>
+              <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
+            </ons-list-item>
       </ons-list>
     </br>
       <ons-list style="width:70%; margin:auto;">
@@ -501,7 +508,7 @@
           Día de la juventud / 12-02-2019
         </ons-list-title>
   
-        <ons-list-item tappable  style="height: 100px">
+        <ons-list-item tappable onclick="createConsultarpromo();"  style="height: 100px">
             <div class="left">
               <img class="list-item__thumbnail" src="https://placekitten.com/60/60">
             </div>
@@ -519,11 +526,11 @@
     <div class="alert-dialog-title"> <b><br/>Día del amor y la amistad </b></div>
     <div class="alert-dialog-content">
       <ons-card>
-        <div style="text-align: center; opacity: 1; padding-top: 20px; ">
-          <img src="https://placekitten.com/200/200" >
-          <p>
-          <textarea class="textarea" rows="4" placeholder="" >Dos por uno pa los cachos :D</textarea><br/><br/>
-          </p>
+          <div style="text-align: center; opacity: 1; padding-top: 20px; ">
+              <img src="productos/17 Promo San Valentin.jpg" style="width:200px" >
+              <p>
+              <textarea class="textarea" rows="4" placeholder="" >¡En Kalua's Café pensamos para ti este 14 de febrero! Así que ven y disfruta con nosotros de esta excelente promoción donde te ofrecemos un 2x1 en Cheesecake de Fresa, además de un 20% de descuento en cualquier café de tu elección si vas acompañado de tu pareja.</textarea><br/><br/>
+              </p>
       </ons-card>
     </div>
     <ons-row>
