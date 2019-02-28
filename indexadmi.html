@@ -352,13 +352,53 @@
             onchange="ons.notification.alert('Searched for: ' + this.value)"
           ></ons-search-input>
         </p>
-        <ons-list-header><b>Helado de Vainilla</b></ons-list-header>
+        <ons-list-header><b>Café Moccacinno</b></ons-list-header>
         <ons-list-item tappable onclick="createAlertDialog();" style="height: 100px">
           <div class="left">
-            <img src="https://placekitten.com/40/40">
+            <img src="productos/2CafeMocca.jpg" style=" width: 70px">
           </div>
           <div class="center"  style="height: 100px">
-            <span class="list-item__title">Vainilla</span><span class="list-item__subtitle">vainillita</span>
+            <span class="list-item__title">Delicioso café con leche, un toque de leche condensada y cacao en polvo que encantará a tu paladar.</span><span class="list-item__subtitle">Disponible hoy.</span>
+          </div>
+        </ons-list-item>
+
+        <ons-list-header><b>Café con leche</b></ons-list-header>
+        <ons-list-item tappable onclick="createAlertDialog();" style="height: 100px">
+          <div class="left">
+            <img src="productos/5 Cafe con Leche.jpg" style=" width: 70px">
+          </div>
+          <div class="center"  style="height: 100px">
+            <span class="list-item__title">Delicioso café con leche, preparado con el mejor café de la región.</span><span class="list-item__subtitle">Disponible hoy.</span>
+          </div>
+        </ons-list-item>
+
+        <ons-list-header><b>Café Bombón</b></ons-list-header>
+        <ons-list-item tappable onclick="createAlertDialog();" style="height: 100px">
+          <div class="left">
+            <img src="productos/10 Cafe Bombon.jpg" style=" width: 70px">
+          </div>
+          <div class="center"  style="height: 100px">
+            <span class="list-item__title">Exquisito café con una gruesa capa de leche condensada para endulzarte el momento.</span><span class="list-item__subtitle">Disponible hoy.</span>
+          </div>
+        </ons-list-item>
+
+        <ons-list-header><b>Torta Oreo</b></ons-list-header>
+        <ons-list-item tappable onclick="createAlertDialog();" style="height: 100px">
+          <div class="left">
+            <img src="productos/1TortadeOreo.jpg" style=" width: 70px">
+          </div>
+          <div class="center"  style="height: 100px">
+            <span class="list-item__title">Torta de oreo hecha con los mejores ingredientes.</span><span class="list-item__subtitle">Disponible hoy.</span>
+          </div>
+        </ons-list-item>
+
+        <ons-list-header><b>Volcán de chocolate</b></ons-list-header>
+        <ons-list-item tappable onclick="createAlertDialog();" style="height: 100px">
+          <div class="left">
+            <img src="productos/7 Volcan con Helado.jpg" style=" width: 70px">
+          </div>
+          <div class="center"  style="height: 100px">
+            <span class="list-item__title">Bizcocho relleno con una deliciosa cremas de chocoavellana. </span><span class="list-item__subtitle">Disponible hoy.</span>
           </div>
         </ons-list-item>
           <ons-fab position="bottom right">
@@ -387,7 +427,7 @@
       <ons-icon icon="fa-birthday-cake" size=40px></ons-icon> <ons-icon icon="fa-coffee" size=40px></ons-icon>
       <p>
       <ons-input id="username" modifier="underbar" placeholder="Nombre: " float></ons-input><br/><br/>
-      <ons-input id="username" modifier="underbar" placeholder="Descripción: " float></ons-input><br/><br/>
+      <textarea class="textarea" rows="4" placeholder="Descripción:" placeholder="" ></textarea><br/><br/><br/>
       <ons-input id="username" modifier="underbar" placeholder="Precio: " float></ons-input><br/><br/>
       <ons-input type="file" id="username" modifier="underbar" placeholder="Seleccione una foto: " float></ons-input><br/><br/>
       </p>
@@ -403,13 +443,13 @@
 
 <template id="consultarproducto.html">
   <ons-alert-dialog id="my-alert-dialog" modifier="rowfooter">
-    <div class="alert-dialog-title"> <b>Helado de Vainilla</b></div>
+    <div class="alert-dialog-title"> <b>Café Moccacinno</b></div>
     <div class="alert-dialog-content">
       <ons-card>
-        <img src="https://placekitten.com/300/300" style="width: 100%">
+        <img src="productos/2CafeMocca.jpg" style="width: 200px">
           <div style="text-align: center; opacity: 1; padding-top: 20px; ">
                 <p>
-                <textarea class="textarea" rows="4" placeholder="" >Otra cosa.</textarea><br/><br/>
+                <textarea class="textarea" rows="4" placeholder="" >Delicioso café con leche, un toque de leche condensada y cacao en polvo que encantará a tu paladar</textarea><br/><br/>
                 </p>
         </div>
       </ons-card>
@@ -430,9 +470,9 @@
         <div style="text-align: center; opacity: 1; padding-top: 40px; ">
           <ons-icon icon="fa-birthday-cake" size=40px></ons-icon> <ons-icon icon="fa-coffee" size=40px></ons-icon>
           <p>
-          <ons-input id="username" modifier="underbar" placeholder="Nombre:" value="Helado de vainilla" float></ons-input><br/><br/>
-          <ons-input id="username" modifier="underbar" placeholder="Descripción: " float></ons-input><br/><br/>
-          <ons-input id="username" modifier="underbar" placeholder="Precio: " float></ons-input><br/><br/>
+          <ons-input id="username" modifier="underbar" placeholder="Nombre:" value="Café Moccacinno" float></ons-input><br/><br/>
+          <textarea class="textarea" rows="4" placeholder="" value="Delicioso café con leche, un toque de leche condensada y cacao en polvo que encantará a tu paladar" float>Delicioso café con leche, un toque de leche condensada y cacao en polvo que encantará a tu paladar</textarea><br/><br/>
+          <ons-input id="username" modifier="underbar" placeholder="Precio: " value="Precio: 2000bs" float></ons-input><br/><br/>
           <ons-input type="file" id="username" modifier="underbar" placeholder="Seleccione una foto: " float></ons-input><br/><br/>
           </p>
       </ons-card>
