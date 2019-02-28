@@ -35,20 +35,24 @@
     <ons-if platform="other">
       <img src="Logo.png" style="width:10%">
     </ons-if>
-      <h4><i>Bienvenido a Kaluas Café</i></h4>
+      <h4><i>Bienvenido a Kalua's Café</i></h4>
       <p>
-        <ons-input id="username" modifier="underbar" placeholder="Username" float></ons-input>
+        <ons-input id="username" modifier="underbar" placeholder="Nombre de Usuario" float></ons-input>
       </p>
       <p>
-        <ons-input id="password" modifier="underbar" type="password" placeholder="Password" float></ons-input>
+        <ons-input id="password" modifier="underbar" type="password" placeholder="Contraseña" float></ons-input>
       </p>
       <p style="margin-top: 30px;">
-        <ons-button onclick="login()">Sign in</ons-button>
-
+        <ons-button onclick="login()">Iniciar sesión</ons-button><br/><br/>
+        <a onclick="ons.notification.alert('Próximamente');" style="color:black; text-decoration:none;"><i>¿No tienes cuenta? ¡Regístrate ahora!</i></a>
       </p>
     </div>
   </ons-page>
+  <ons-bottom-toolbar style="text-align:center; font-family:'Arial';">
+    <p><b>Diseñado por:</b> SII Team</p>
+  </ons-bottom-toolbar>
 </body>
+
 
   <script>
 var login = function() {
