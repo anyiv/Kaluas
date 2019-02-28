@@ -142,32 +142,41 @@
           </ons-row>
         </ons-list-title>
   
-        <ons-list-item tappable>
+        <ons-list-item tappable style="height: 100px">
             <div class="left">
-              <img class="list-item__thumbnail" src="https://placekitten.com/50/50">
+              <img class="list-item__thumbnail" src="productos/2CafeMocca.jpg" style="width: 80px; height: 80px">
             </div>
             <div class="center">
-              Torta de chocolate
+              Café Moccacinno
             </div>
           <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
         </ons-list-item>
   
-        <ons-list-item tappable>
+        <ons-list-item tappable style="height: 100px">
             <div class="left">
-              <img class="list-item__thumbnail" src="https://placekitten.com/g/41/40">
+              <img class="list-item__thumbnail" src="productos/7 Volcan con Helado.jpg" style="width: 80px; height: 80px">
             </div>
             <div class="center">
               Volcán de chocolate
             </div>
-          <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
         </ons-list-item>
   
-        <ons-list-item tappable>
+        <ons-list-item tappable style="height: 100px">
             <div class="left">
-              <img class="list-item__thumbnail" src="https://placekitten.com/g/40/41">
+              <img class="list-item__thumbnail" src="productos/1TortadeOreo.jpg"  style="width: 80px; height: 80px">
             </div>
             <div class="center">
-              Pie de Limón
+              Torta de Oreo
+            </div>
+          <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
+        </ons-list-item>
+
+        <ons-list-item tappable style="height: 100px">
+            <div class="left">
+              <img class="list-item__thumbnail" src="productos/5 Cafe con Leche.jpg"  style="width: 80px; height: 80px">
+            </div>
+            <div class="center">
+              Café con leche
             </div>
           <ons-col width=20%><ons-input type="text" placeholder="Cantidad"></ons-col>
         </ons-list-item>
@@ -251,18 +260,38 @@
             <span class="list-item__title">Bizcocho relleno con una deliciosa cremas de chocoavellana. </span><span class="list-item__subtitle">Disponible hoy.</span>
           </div>
         </ons-list-item>
+
+        <ons-list-header><b>Cheesecake de fresa</b></ons-list-header>
+        <ons-list-item tappable onclick="createAlertDialog();" style="height: 100px">
+          <div class="left">
+            <img src="productos/3CFresa.jpg" style=" width: 70px">
+          </div>
+          <div class="center"  style="height: 100px">
+            <span class="list-item__title">Exquisita Cheesecake de fresa. </span><span class="list-item__subtitle">Disponible hoy.</span>
+          </div>
+        </ons-list-item>
+
+        <ons-list-header><b>Torta triple chocolate</b></ons-list-header>
+        <ons-list-item tappable onclick="createAlertDialog();" style="height: 100px">
+          <div class="left">
+            <img src="productos/9 Torta Triple Chocolate.jpg" style=" width: 70px">
+          </div>
+          <div class="center"  style="height: 100px">
+            <span class="list-item__title">Deliciosa torta de chocolate hecho con el mejor cacao de Venezuela. </span><span class="list-item__subtitle">NO disponible hoy.</span>
+          </div>
+        </ons-list-item>
     </ons-page>
 </template>
 
 <template id="alert-dialog.html">
   <ons-alert-dialog id="my-alert-dialog" modifier="rowfooter">
-    <div class="alert-dialog-title"> <b>Helado de Vainilla</b></div>
+    <div class="alert-dialog-title"> <b>Café Moccacinno</b></div>
     <div class="alert-dialog-content">
       <ons-card>
-          <img src="https://placekitten.com/300/300" style="width: 100%">
+          <img src="productos/2CafeMocca.jpg" style="width: 200px">
           <div style="text-align: center; opacity: 1; padding-top: 20px; ">
                 <p>
-                <textarea class="textarea" rows="4" placeholder="" >Otra cosa.</textarea><br/><br/>
+                <textarea class="textarea" rows="4" placeholder="" >Delicioso café con leche, un toque de leche condensada y cacao en polvo que encantará a tu paladar.</textarea><br/><br/>
                 </p>
         </div>
       </ons-card>

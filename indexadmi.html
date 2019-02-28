@@ -401,6 +401,26 @@
             <span class="list-item__title">Bizcocho relleno con una deliciosa cremas de chocoavellana. </span><span class="list-item__subtitle">Disponible hoy.</span>
           </div>
         </ons-list-item>
+
+        <ons-list-header><b>Cheesecake de fresa</b></ons-list-header>
+        <ons-list-item tappable onclick="createAlertDialog();" style="height: 100px">
+          <div class="left">
+            <img src="productos/3CFresa.jpg" style=" width: 70px">
+          </div>
+          <div class="center"  style="height: 100px">
+            <span class="list-item__title">Exquisita Cheesecake de fresa. </span><span class="list-item__subtitle">Disponible hoy.</span>
+          </div>
+        </ons-list-item>
+
+        <ons-list-header><b>Torta triple chocolate</b></ons-list-header>
+        <ons-list-item tappable onclick="createAlertDialog();" style="height: 100px">
+          <div class="left">
+            <img src="productos/9 Torta Triple Chocolate.jpg" style=" width: 70px">
+          </div>
+          <div class="center"  style="height: 100px">
+            <span class="list-item__title">Deliciosa torta de chocolate hecho con el mejor cacao de Venezuela. </span><span class="list-item__subtitle">No disponible hoy.</span>
+          </div>
+        </ons-list-item>
           <ons-fab position="bottom right">
               <ons-icon icon="md-plus" onclick="fn.load('incluirproducto.html')"></ons-icon>
             </ons-fab>
@@ -838,7 +858,7 @@
   
         <ons-list-item tappable onclick="createConsultarpromo();" style="height: 100px">
             <div class="left">
-              <img class="list-item__thumbnail" src="productos/3CFresa.jpg">
+              <img class="list-item__thumbnail" src="productos/17 Promo San Valentin.jpg" style=" width: 80px; height: 80px;">
             </div>
             <div class="center">
                 ¡En Kalua's Café pensamos para ti este 14 de febrero! Así que ven y disfruta con nosotros de esta excelente promoción donde te ofrecemos un 2x1 en Cheesecake de Fresa, además de un 20% de descuento en cualquier café de tu elección si vas acompañado de tu pareja.
@@ -854,7 +874,7 @@
   
         <ons-list-item tappable onclick="createConsultarpromo();" style="height: 100px">
             <div class="left">
-              <img class="list-item__thumbnail" src="https://placekitten.com/60/60">
+              <img class="list-item__thumbnail" src="productos/16 Promo Juventud.jpg" style=" width: 80px; height: 80px;">
             </div>
             <div class="center">
               Dos por uno pa los jovenes :D
@@ -871,7 +891,7 @@
 
 <template id="modifpromo.html">
   <ons-dialog id="modificar-promo" modifier="rowfooter" style="width: 100%; height: 100vh">
-    <div class="alert-dialog-title"> <b><br/>Día del amor y la amistad </b></div>
+    <div class="alert-dialog-title"> <b><br/>Modificar promoción </b></div>
     <div class="alert-dialog-content">
       <ons-card>
           <div style="text-align: center; opacity: 1; padding-top: 10px;">
@@ -886,10 +906,10 @@
     </div>
     <ons-row>
       <ons-col>
-        <ons-alert-dialog-button style="background-color: lightblue" onclick="hideConsultarpromo()">Cancelar</ons-alert-dialog-button>
+        <ons-alert-dialog-button style="background-color: lightblue" onclick="hideModificarpromo()">Cancelar</ons-alert-dialog-button>
       </ons-col>
       <ons-col>
-        <ons-alert-dialog-button style="background-color: lightgreen" onclick="hide.createConsultarpromo(); createModifpromo();">Modificar</ons-alert-dialog-button>
+        <ons-alert-dialog-button style="background-color: lightgreen" onclick="hideModificarpromo(); ons.notification.alert('La promoción se ha modificado con éxito.') ">Modificar</ons-alert-dialog-button>
       </ons-col>
 
     </ons-row>
@@ -903,7 +923,7 @@
     <div class="alert-dialog-content">
       <ons-card>
         <div style="text-align: center; opacity: 1; padding-top: 20px; ">
-          <img src="productos/3CFresa.jpg" style="width:200px" >
+          <img src="productos/17 Promo San Valentin.jpg" style="width:200px" >
           <p>
           <textarea class="textarea" rows="4" placeholder="" >¡En Kalua's Café pensamos para ti este 14 de febrero! Así que ven y disfruta con nosotros de esta excelente promoción donde te ofrecemos un 2x1 en Cheesecake de Fresa, además de un 20% de descuento en cualquier café de tu elección si vas acompañado de tu pareja.</textarea><br/><br/>
           </p>
@@ -914,7 +934,7 @@
         <ons-alert-dialog-button style="background-color: lightblue" onclick="hideConsultarpromo()">Cancelar</ons-alert-dialog-button>
       </ons-col>
       <ons-col>
-        <ons-alert-dialog-button style="background-color: lightgreen" onclick="hide.createConsultarpromo()">Modificar</ons-alert-dialog-button>
+        <ons-alert-dialog-button style="background-color: lightgreen" onclick="hideConsultarpromo(); createModifpromo();">Modificar</ons-alert-dialog-button>
       </ons-col>
       <ons-col>
         <ons-alert-dialog-button style="background-color: lightcoral" onclick="hideConsultarpromo(); ons.notification.confirm('¿Está seguro que deses eliminar la promoción?');">Eliminar</ons-alert-dialog-button>
@@ -924,32 +944,6 @@
     </ons-dialog>
 </template>
 
-<template id="modificarpromo.html">
-  <ons-dialog id="consultar-promo" modifier="rowfooter" style="width: 100%; height: 100vh">
-    <div class="alert-dialog-title"> <b><br/>Día del amor y la amistad </b></div>
-    <div class="alert-dialog-content">
-      <ons-card>
-        <p>
-          <ons-input id="username" modifier="underbar" placeholder="Título o tema" float></ons-input><br/><br/>
-          <textarea class="textarea" rows="4" placeholder="Escribe la descripción aquí..."></textarea><br/><br/>
-          <ons-input type="file" id="username" modifier="underbar" placeholder="Seleccione una foto: " float></ons-input><br/><br/>
-          </p>
-      </ons-card>
-    </div>
-    <ons-row>
-      <ons-col>
-        <ons-alert-dialog-button style="background-color: lightblue" onclick="hideConsultarpromo()">Cancelar</ons-alert-dialog-button>
-      </ons-col>
-      <ons-col>
-        <ons-alert-dialog-button style="background-color: lightgreen" onclick="hide.createConsultarpromo()">Modificar</ons-alert-dialog-button>
-      </ons-col>
-      <ons-col>
-        <ons-alert-dialog-button style="background-color: lightcoral" onclick="hideConsultarpromo(); ons.notification.confirm('¿Está seguro que deses eliminar la promoción?');">Eliminar</ons-alert-dialog-button>
-      </ons-col>
-    </ons-row>
-
-    </ons-dialog>
-</template>
 
 <template id="registrarpromo.html">
   <ons-page>
@@ -1124,7 +1118,7 @@ var createModifpromo = function() {
   if (dialog) {
     dialog.show();
   } else {
-    ons.createElement('modificarpromo.html', { append: true })
+    ons.createElement('modifpromo.html', { append: true })
       .then(function(dialog) {
         dialog.show();
       });
@@ -1133,7 +1127,7 @@ var createModifpromo = function() {
 
 var hideModificarpromo = function() {
   document
-    .getElementById('consultar-promo')
+    .getElementById('modificar-promo')
     .hide();
 };
 
