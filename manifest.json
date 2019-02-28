@@ -1,9 +1,8 @@
 {
- "lang": "es",
- "dir": "ltr",
+ "lang": "spa",
  "name": "Kalua's Café App",
  "description": "La aplicación oficial de Kalua's Café.",
- "short_name": "Kalua's",
+ "short_name": "Kalua's Café",
  "icons": [
   {
    "src": "ico/android-icon-36x36.png",
@@ -42,7 +41,6 @@
    "density": "4.0"
   }
  ],
- "start_url": "/index.html",
  "display": "standalone",
  "orientation": "portrait"
 }
