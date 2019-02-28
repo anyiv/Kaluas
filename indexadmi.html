@@ -766,7 +766,7 @@
 
 <template id="modifpromo.html">
   <ons-dialog id="modificar-promo" modifier="rowfooter" style="width: 100%; height: 100vh">
-    <div class="alert-dialog-title"> <b><br/>Día del amor y la amistad </b></div>
+    <div class="alert-dialog-title"> <b><br/>Modificar promoción </b></div>
     <div class="alert-dialog-content">
       <ons-card>
       
@@ -774,14 +774,13 @@
     </div>
     <ons-row>
       <ons-col>
-        <ons-alert-dialog-button style="background-color: lightblue" onclick="hideConsultarpromo()">Cancelar</ons-alert-dialog-button>
+        <ons-alert-dialog-button style="background-color: lightblue" onclick="hideModificarpromo()">Cancelar</ons-alert-dialog-button>
       </ons-col>
       <ons-col>
-        <ons-alert-dialog-button style="background-color: lightgreen" onclick="hide.createConsultarpromo(); createModifpromo();">Modificar</ons-alert-dialog-button>
+        <ons-alert-dialog-button style="background-color: lightgreen" onclick="hideModificarpromo(); ons.notification.alert('La promoción ha sido modificada con exito.');">Modificar</ons-alert-dialog-button>
       </ons-col>
 
     </ons-row>
-
     </ons-dialog>
 </template>
 
@@ -802,7 +801,7 @@
         <ons-alert-dialog-button style="background-color: lightblue" onclick="hideConsultarpromo()">Cancelar</ons-alert-dialog-button>
       </ons-col>
       <ons-col>
-        <ons-alert-dialog-button style="background-color: lightgreen" onclick="hide.createConsultarpromo()">Modificar</ons-alert-dialog-button>
+        <ons-alert-dialog-button style="background-color: lightgreen" onclick=" createModifpromo(); hideConsultarpromo(); ">Modificar</ons-alert-dialog-button>
       </ons-col>
       <ons-col>
         <ons-alert-dialog-button style="background-color: lightcoral" onclick="hideConsultarpromo(); ons.notification.confirm('¿Está seguro que deses eliminar la promoción?');">Eliminar</ons-alert-dialog-button>
@@ -812,32 +811,6 @@
     </ons-dialog>
 </template>
 
-<template id="modificarpromo.html">
-  <ons-dialog id="consultar-promo" modifier="rowfooter" style="width: 100%; height: 100vh">
-    <div class="alert-dialog-title"> <b><br/>Día del amor y la amistad </b></div>
-    <div class="alert-dialog-content">
-      <ons-card>
-        <p>
-          <ons-input id="username" modifier="underbar" placeholder="Título o tema" float></ons-input><br/><br/>
-          <textarea class="textarea" rows="4" placeholder="Escribe la descripción aquí..."></textarea><br/><br/>
-          <ons-input type="file" id="username" modifier="underbar" placeholder="Seleccione una foto: " float></ons-input><br/><br/>
-          </p>
-      </ons-card>
-    </div>
-    <ons-row>
-      <ons-col>
-        <ons-alert-dialog-button style="background-color: lightblue" onclick="hideConsultarpromo()">Cancelar</ons-alert-dialog-button>
-      </ons-col>
-      <ons-col>
-        <ons-alert-dialog-button style="background-color: lightgreen" onclick="hide.createConsultarpromo()">Modificar</ons-alert-dialog-button>
-      </ons-col>
-      <ons-col>
-        <ons-alert-dialog-button style="background-color: lightcoral" onclick="hideConsultarpromo(); ons.notification.confirm('¿Está seguro que deses eliminar la promoción?');">Eliminar</ons-alert-dialog-button>
-      </ons-col>
-    </ons-row>
-
-    </ons-dialog>
-</template>
 
 <template id="registrarpromo.html">
   <ons-page>
@@ -1002,7 +975,7 @@ var createModifpromo = function() {
   if (dialog) {
     dialog.show();
   } else {
-    ons.createElement('modificarpromo.html', { append: true })
+    ons.createElement('modifpromo.html', { append: true })
       .then(function(dialog) {
         dialog.show();
       });
@@ -1011,7 +984,7 @@ var createModifpromo = function() {
 
 var hideModificarpromo = function() {
   document
-    .getElementById('consultar-promo')
+    .getElementById('modificar-promo')
     .hide();
 };
 
